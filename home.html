@@ -3,12 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WYSC 2024  </title>
+  <title>WYSC / SLIO 2024  </title>
   <link rel="shortcut icon" href="images/wyclogo.png" type="image/x-icon">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.cdnfonts.com/css/franklin-gothic?styles=17611" rel="stylesheet">
   <link href="https://fonts.cdnfonts.com/css/ibm-plex-sans" rel="stylesheet">
-  
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
        
   <style>
     html{
@@ -22,6 +24,14 @@
       font-family: 'IBM Plex Sans', sans-serif;
                                                 
     }
+    .bg{
+      clip-path: polygon(0 0, 100% 0%, 85% 100%, 0 100%);
+    }
+    @media (max-width:680px){
+      .bg{
+        clip-path: none;
+      }
+    }
   </style>
 </head>
 <body class=" antialiased text-gray-800 bg-white dark:bg-gray-50 dark:text-black">
@@ -29,7 +39,7 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center py-4 lg:justify-start lg:space-x-10">
           <div class="flex justify-start lg:w-0 lg:flex-1">
-            <img id='citrus' src="images/wyclogo.png" class="w-6" onmouseover='document.getElementById("citrus").src="https://www.srilankascrabbleleague.lk/static/citrus.png"' onmouseleave='document.getElementById("citrus").src="images/wyclogo.png"'>&nbsp;<a href="#" class="text-gray-900 text-base font-medium hover:text-gray-600" style="color: #1e3653;">WYSC <span class="text-orange-500">2024</span></a>&nbsp;
+            <img id='citrus' src="images/wyclogo.png" class="w-6" onmouseover='document.getElementById("citrus").src="https://www.srilankascrabbleleague.lk/static/citrus.png"' onmouseleave='document.getElementById("citrus").src="images/wyclogo.png"'>&nbsp;<a href="#" class="text-gray-900 text-base font-medium hover:text-gray-600" style="color: #1e3653;">WYSC & SLIO <span class="text-orange-500">2024</span></a>&nbsp;
           </div>
           <nav class="lg:block hidden space-x-10" id="menu">
             <a href="#about" class="text-base font-medium text-gray-900 hover:text-orange-500 block lg:inline-block">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;About Us</a>
@@ -48,40 +58,72 @@
       
     </div>
 
-    <div class="flex flex-col md:flex-row h-auto">
+    <div class="flex flex-col md:flex-row h-screen md:bg-[url('images/bg.jpeg')]  lg:bg-contain bg-cover">
     
-      <div class="w-full h-128 md:w-6/4 md:h-screen invisible md:visible bg-cover bg-center bg-[url('images/bg.jpg')]" style="clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%) ;">
-        
-      </div>
-  
-  <div class="w-full md:w-1/2 flex flex-col justify-center items-center p-8">
-      <img src="images/wyclogo.png" alt="Logo" class="mb-4 max-w-60 -z-50">
-      <h1 class="text-5xl font-bold text-gray-800 mb-2 text-center">World Youth Scrabble Championship 2024</h1>
-      <p class="text-gray-600 mb-4 text-center">6-8 September, Citrus Waskaduwa,<br> Sri Lanka</p>
-      <a href="#schedule" class=" text-black p-2 rounded-lg border-solid border-orange-500 border-2 hover:bg-orange-500 hover:text-white font-none">View Schedule</a> 
-      <div class="flex justify-center mt-2 py-2">
+  <div class="bg w-full md:w-2/2 flex flex-col justify-center items-center p-8 bg-white" data-aos="fade-right" data-aos-duration="1000" >
+    <div class="flex md:block py-10 md:py-0">
+    <img src="images/wyclogo.png" alt="Logo" class="mb-4 md:max-w-60 -z-50 max-w-48">
+    <img src="images/sliologo.png" alt="Logo" class="mb-4 md:max-w-60 -z-50 md:hidden max-w-48">
+    </div>
+    <h1 class="md:text-5xl text-4xl font-bold text-gray-800 mb-2 text-center">World Youth Scrabble Championship <br> 2024  <span class=" md:hidden"><br>&<br>Sri Lanka International Open 2024</span></h1>
+    <p class="text-gray-600 mb-4 text-center">6-8 September <span class="md:hidden">& 13-15 September</span>, Citrus Waskaduwa,<br> Sri Lanka</p>
+    <div class="flex justify-center md:hidden"><a href="#schedule" class="max-w-48 text-center text-black p-2 rounded-lg border-solid border-orange-500 border-2 hover:bg-orange-500 hover:text-white font-none">View Schedule</a> </div>
+    <div class="flex justify-center  py-4 md:hidden">
+      
+      <a
+      
+        href="mailto:wysc2024@scrabble.lk"
+        class="text-black text-3xl  mx-2 "
+      >
+      <ion-icon name="mail" class="hover:text-orange-500"></ion-icon>
+      </a>
+      <a
+      
+        href="https://www.facebook.com/ScrabbleFederationSL"
+        class="text-black text-3xl  mx-2 "
+      >
+      <ion-icon name="logo-facebook" class="hover:text-orange-500"></ion-icon>
+      </a>
+      <a
+      
+        href="https://www.instagram.com/scrabblefederationsl/"
+        class="text-black  text-3xl mx-2 "
+      ><ion-icon class="hover:text-orange-500" name="logo-instagram"></ion-icon>
+      </a>
+    </div>
+</div>
+  <div class="w-1/2 h-screen hidden md:flex flex-col justify-center ">
+      <div class="mt-96 pt-24 flex justify-center"><a href="#schedule" class="max-w-48 text-center text-black bg-slate-100/80 p-2 rounded-lg border-solid border-transparent hover:border-orange-500 border-2  font-none hover:text-orange-500">View Schedule</a> </div>
+      <div class="flex justify-center mt-2 py-2 ">
         
         <a
         
           href="mailto:wysc2024@scrabble.lk"
-          class="text-black text-3xl dark:text-gray-800 mx-2 "
+          class="text-white text-3xl  mx-2 "
         >
-        <ion-icon name="mail" class="hover:text-orange-500"></ion-icon>
+        <ion-icon name="mail" class="text-white hover:text-orange-500"></ion-icon>
         </a>
         <a
         
           href="https://www.facebook.com/ScrabbleFederationSL"
-          class="text-black text-3xl dark:text-gray-800 mx-2 "
+          class="text-white text-3xl  mx-2 "
         >
-        <ion-icon name="logo-facebook" class="hover:text-orange-500"></ion-icon>
+        <ion-icon name="logo-facebook" class="text-white hover:text-orange-500"></ion-icon>
         </a>
         <a
         
           href="https://www.instagram.com/scrabblefederationsl/"
-          class="text-black dark:text-gray-800 text-3xl mx-2 "
-        ><ion-icon class="hover:text-orange-500" name="logo-instagram"></ion-icon>
+          class="text-white  text-3xl mx-2 "
+        ><ion-icon class="text-white hover:text-orange-500" name="logo-instagram"></ion-icon>
         </a>
       </div>
+  </div>
+  <div class="bg w-full md:w-2/2 flex flex-col justify-center items-center p-8 hidden md:flex bg-white" data-aos="fade-left" data-aos-duration="1000" style="clip-path: polygon(15% 0, 100% 0%, 100% 100%, 0 100%);
+  ">
+      <img src="images/sliologo.png" alt="Logo" class="mb-4 max-w-60 -z-50">
+      <h1 class="text-5xl font-bold text-gray-800 mb-2 text-center">Sri Lanka <br>International Open<br>2024</h1>
+      <p class="text-gray-600 mb-4 text-center">13-15 September, Citrus Waskaduwa,<br> Sri Lanka</p>
+    
       
   </div>
   
@@ -89,13 +131,13 @@
 
   
   <div id="about" class="py-12 bg-gray-300 dark:bg-gray-100">
-    <div class="max-w-6xl mx-auto px-4">
+    <div class="max-w-5xl mx-auto px-4">
       <div class="text-center mb-12">
-        <h1 class="text-3xl font-bold text-gray-800 dark:text-blue-900" style="color: #1e3653;">About Us</h1>
+        <h1 class="text-3xl font-bold text-gray-800 dark:text-white" style="color: #1e3653;">About Us</h1>
       </div>
-      <div class="max-w-6xl mx-auto px-4 py-8 bg-gray-100 text-center rounded-lg shadow-xl">
+      <div class="max-w-6xl mx-auto px-4 py-4 bg-gray-100 text-center rounded-lg shadow-xl" data-aos="fade-up" data-aos-duration="1000">
         <h2 class="text-2xl font-bold text-gray-800 dark:text-black mb-4">World Youth Scrabble Championship</h2>
-        <p class="text-gray-800 dark:text-gray-800">The World Youth Scrabble Championship (formerly known as the WESPA Youth Cup) has been contested every year since 2006. This year, Sri Lanka has been offered the opportunity to host the tournament <br><a href="https://www.youthscrabble.org" class="hover:underline" target="_blank">youthscrabble.org</a></p>
+        <p class="text-gray-800 ">The World Youth Scrabble Championship (formerly known as the WESPA Youth Cup) has been contested every year since 2006. This year, Sri Lanka has been offered the opportunity to host the tournament <br><a href="https://www.youthscrabble.org" class="hover:underline" target="_blank">youthscrabble.org</a></p>
         
         <div class="max-w-80" style="display: block;margin: auto;">
           <br>
@@ -122,11 +164,17 @@
           <img src="images/flags/FLAGUSA.png" alt="Placeholder Image" class="w-25 h-5">
       </div>
           </div>
-        </div>
-        
+        </div><br>
+        <div class="max-w-6xl mx-auto px-4 py-8 bg-gray-100 text-center rounded-lg ">
+          <h2 class="text-2xl font-bold text-gray-800 dark:text-black mb-4">Sri Lanka International Open</h2>
+          <p class="text-gray-800 "> The Sri Lanka International Open Scrabble Championship is a renowned and highly competitive event, attracting top-rated players from all over the globe. It will return this year for its 8th edition.<br>
+            <a href="https://scrabblelk" class="hover:underline" target="_blank">scrabble.lk</a>
+          </p>
+        </div>  
       </div>
+      
   <br>    
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4" data-aos="fade-up" data-aos-duration="1000">
         <div class="grid lg:flex lg:grid-cols-2  grid-cols-1 items-center bg-white dark:bg-gray-100 rounded-lg overflow-hidden shadow-lg p-6">
           <div class="items-center lg:w-1/3 ">
             <img src="images/logo-sfsl.jpg" 
@@ -134,7 +182,7 @@
           </div>
           <div class="p-4 lg:w-2/3" >
             <h3 class="text-xl font-semibold  text-center mb-3">Scrabble Federation of Sri Lanka</h3>
-            <p class="text-gray-800 dark:text-gray-800 text-justify">The Scrabble Federation of Sri Lanka (SFSL), the governing body for Scrabble in the island will be the main organizer for WYSC 2024 <br><a href="https://scrabble.lk" target="_blank" class="hover:underline">scrabble.lk</a></p>
+            <p class="text-gray-800  text-justify p-2">The Scrabble Federation of Sri Lanka (SFSL), the governing body for Scrabble in the island will be the main organizer for WYSC 2024 and SLIO 2024 <br><a href="https://scrabble.lk" target="_blank" class="hover:underline">scrabble.lk</a></p>
           </div>
         </div>
         <div class="grid lg:grid-cols-2 lg:flex grid-cols-1 items-center bg-white dark:bg-gray-100 rounded-lg overflow-hidden shadow-lg p-6">
@@ -145,7 +193,7 @@
 
           <div class="p-4 lg:w-2/3">
             <h3 class="text-xl font-semibold text-center mb-3">WESPA</h3>
-            <p class="text-gray-800 dark:text-gray-800 text-justify">The World English-Language Scrabble Players' Association (WESPA) is the overarching global body for English-language national Scrabble associations and similar entities.<br><a href="https://wespa.org" class="hover:underline" target="_blank">wespa.org</a></p>
+            <p class="text-gray-800  text-justify">The World English-Language Scrabble Players' Association (WESPA) is the overarching global body for English-language national Scrabble associations and similar entities.<br><a href="https://wespa.org" class="hover:underline" target="_blank">wespa.org</a></p>
           </div>
         </div>
         
@@ -154,10 +202,10 @@
     </div>
   </div>
   
-  <div id="schedule" class="py-12 bg-gray-300 dark:bg-gray-150">
-    <div class="max-w-6xl mx-auto px-4">
+  <div id="schedule" class="py-12 bg-gray-300 dark:bg-gray-150 grid grid-cols-1" >
+    <div class="max-w-6xl mx-auto px-4 "data-aos="fade-up" data-aos-duration="1000">
       <div class="text-center mb-12">
-        <h1 class="text-3xl font-bold text-gray-800 dark:text-blue-900" style="color: #1e3653;">Schedule</h1>
+        <h1 class="text-3xl font-bold text-gray-800 dark:text-white" style="color: #1e3653;">WYSC Schedule</h1>
         
       </div>
       <div class="grid md:grid-cols-2 grid-cols-1 gap-4">
@@ -199,12 +247,54 @@
 </div>
 
       </div>
-      <p class="pt-10 flex justify-center"><a class="cursor-pointer hover:bg-orange-500 text-black bg-orange-500 p-3 rounded-lg hover:text-white bg-transparent border-2 border-orange-500" href="/WYSC 2024 @Sri Lanka.pdf" target="_blank"> Download Event Flyer</a></p></div>
+      <p class="pt-10 flex justify-center">
+        <!-- <a class="cursor-pointer hover:bg-orange-500 text-black bg-orange-500 p-3 rounded-lg hover:text-white bg-transparent border-2 border-orange-500" href="/WYSC 2024 @Sri Lanka.pdf" target="_blank"> Download WYSC Flyer</a></p> -->
+    </div>
+    <div class="max-w-6xl mx-auto px-4 py-10 "data-aos="fade-up" data-aos-duration="1000">
+      <div class="text-center mb-12">
+        <h1 class="text-3xl font-bold text-gray-800 dark:text-white" style="color: #1e3653;">SLIO Schedule</h1>
+        
+      </div>
+      <div class="grid md:grid-cols-2 grid-cols-1 gap-4">
+       
+            
+    
+    <div class="p-4 bg-gray-200 rounded-lg shadow-lg hover:shadow-md">
+      <div class="bg-gray-200 text-black text-center p-4 rounded-md cursor-pointer" onclick="viewtable(this)">
+         <p class="">Opening Ceremony, 07 Games | <b>13th September</b></p>
+      </div>
+  
+    
+      </div>
+      
+    
+  
+  <div class="grid grid-cols-1 gap-4">
+    <div class="p-4 bg-gray-200 rounded-lg shadow-lg hover:shadow-md">
+      <div class="bg-gray-200 text-black text-center p-4 rounded-md cursor-pointer" onclick="viewtable(this)">
+         <p class="">09 Games | <b>14th September</b></p>
+      </div>
+    </div>      
   </div>
   
-  <div id="venue" class="py-8">
-    <div class="max-w-6xl mx-auto px-4">
-      <h1 class="text-3xl font-bold text-center mb-4 text-blue-900" style="color: #1e3653;">Tournament Venue</h1>
+  <div class="p-4 bg-gray-200 rounded-lg shadow-lg hover:shadow-md">
+    <div class="bg-gray-200 text-black text-center p-4 rounded-md cursor-pointer" onclick="viewtable(this)">
+       <p class="">08 Games, Award Ceremony | <b>15th September</b></p>
+    </div>
+
+  
+    </div>
+    
+  
+</div>
+<p class="pt-10 flex justify-center">
+  <a class="cursor-pointer hover:bg-orange-500 text-black bg-orange-500 p-3 rounded-lg hover:text-white bg-transparent border-2 border-orange-500" href="/WYSC 2024 @Sri Lanka.pdf" target="_blank"> Download Event Flyer</a></p>
+</div>
+
+  </div>
+  <div id="venue" class="py-8" data-aos="fade-up" data-aos-duration="1000">
+    <div class="max-w-6xl mx-auto px-4" data-aos="fade-up">
+      <h1 class="text-3xl font-bold text-center mb-4 text-white" style="color: #1e3653;">Tournament Venue</h1>
       <p class="text-center">
         Citrus Waskaduwa, a five star beach hotel, will host the prestigious World Youth Scrabble Championship 2024. It’s 1.5
 hours drive from the Colombo International airport and about 1.5 hours drive from the
@@ -213,19 +303,19 @@ world heritage site, is 1.5 hours drive in the opposite direction.
       </p>
       <div class="flex flex-wrap justify-center items-center">
         <div class="w-full md:w-1/2 lg:w-1/4 p-4">
-          <img src="images/venue-1.jpeg" alt="Venue Image" class="w-full h-auto rounded-lg mb-2">
+          <img src="images/venue-1.jpeg" alt="Venue Image" class="w-full h-auto rounded-lg mb-2" data-aos="fade-up" data-aos-duration="1000">
           
         </div>
         <div class="w-full md:w-1/2 lg:w-1/4 p-4">
-          <img src="images/venue-2.jpg" alt="Venue Image" class="w-full h-auto rounded-lg mb-2">
+          <img src="images/venue-2.jpg" alt="Venue Image" class="w-full h-auto rounded-lg mb-2" data-aos="fade-up" data-aos-duration="2000">
           
         </div>
         <div class="w-full md:w-1/2 lg:w-1/4 p-4">
-          <img src="images/venue-3.jpg" alt="Venue Image" class="w-full h-auto rounded-lg mb-2">
+          <img src="images/venue-3.jpg" alt="Venue Image" class="w-full h-auto rounded-lg mb-2" data-aos="fade-up" data-aos-duration="1000">
           
         </div>
         <div class="w-full md:w-1/2 lg:w-1/4 p-4">
-          <img src="images/venue-4.jpeg" alt="Venue Image" class="w-full h-auto rounded-lg mb-2">
+          <img src="images/venue-4.jpeg" alt="Venue Image" class="w-full h-auto rounded-lg mb-2" data-aos="fade-up" data-aos-duration="2000">
           
         </div>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.1775815600386!2d79.93940857481977!3d6.624851593369423!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae237e2064eac69%3A0xf284eb0ce1818b2!2sCitrus%20Waskaduwa!5e0!3m2!1sen!2slk!4v1713319845846!5m2!1sen!2slk" width="600" height="450" style="border:0;border-radius: 5%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -233,35 +323,35 @@ world heritage site, is 1.5 hours drive in the opposite direction.
     </div>
   </div>
 
-  <div id="transportation" class="py-12 bg-gray-300 dark:bg-gray-150">
-    <div class=" max-w-6xl mx-auto px-4">
+  <div id="transportation" class="py-12 bg-gray-300 dark:bg-gray-150" data-aos="fade-up" data-aos-duration="1000">
+    <div class=" max-w-6xl mx-auto px-4" >
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-gray-800 dark:text-blue-900" style="color: #1e3653;" style="color: #1e3653;">Transportation</h2>
+        <h2 class="text-3xl font-bold text-gray-800 dark:text-white" style="color: #1e3653;" style="color: #1e3653;">Transportation</h2>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div class="grid grid-cols-1 lg:grid-cols-2 items-center bg-white dark:bg-gray-100 rounded-lg overflow-hidden shadow-lg p-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 items-center bg-white dark:bg-gray-100 rounded-lg overflow-hidden shadow-lg p-6" data-aos="fade-up" data-aos-duration="1000">
           <div class="p-4">
             <img src="images/airportpickup.jpeg" alt="Image" class="w-full h-auto rounded-lg">
           </div>
           <div class="">
             <h3 class="text-2xl font-semibold text-center mb-3">Airport Pickups</h3>
-            <p class="text-gray-800 dark:text-gray-800 text-justify">Airport Pickups can be arranged for players arriving at Bandaranaike International Airport (CMB)</p>
+            <p class="text-gray-800  text-justify">Airport Pickups can be arranged for players arriving at Bandaranaike International Airport (CMB)</p>
           </div>
         </div>
-        <div class="grid grid-cols-1 lg:grid-cols-2  items-center bg-white dark:bg-gray-100 rounded-lg overflow-hidden shadow-lg p-6">
+        <div data-aos="fade-up" data-aos-duration="2000" class="grid grid-cols-1 lg:grid-cols-2  items-center bg-white dark:bg-gray-100 rounded-lg overflow-hidden shadow-lg p-6">
           <div class="">
             <img src="images/taxi.png" alt="Image" class="w-full h-auto rounded-lg">
           </div>
           <div class="p-4">
             <h3 class="text-2xl font-semibold text-center mb-3">Taxi Hailing</h3>
-            <p class="text-gray-800 dark:text-gray-800 text-justify"><a href="https://uber.com" class="hover:underline" target="_blank">Uber</a> and <a href="https://pickme.lk" class="hover:underline" target="_blank">Pick Me</a> taxi services can easily be accessed around the Colombo, Kaluthara Area</p>
+            <p class="text-gray-800  text-justify"><a href="https://uber.com" class="hover:underline" target="_blank">Uber</a> and <a href="https://pickme.lk" class="hover:underline" target="_blank">Pick Me</a> taxi services can easily be accessed around the Colombo, Kaluthara Area</p>
           </div>
         </div>
         
       </div>
     </div>
   </div>
-  <div id="accomodation" class="py-12">
+  <div id="accomodation" class="py-12" data-aos="fade-up" data-aos-duration="1000">
     <h1 class="text-center text-3xl font-bold" style="color: #1e3653;">Accomodation </h1>
     
     <div id="carousel" class=" items-center space-x-4 overflow-x-auto p-4 flex flex-wrap justify-center gap-3">
@@ -275,26 +365,27 @@ world heritage site, is 1.5 hours drive in the opposite direction.
     </div>
 </div>
 
-  <footer class="bg-gray-800 dark:bg-gray-300 text-black dark:text-gray-800 text-center py-4">
+<img src="" alt="">
+  <footer class="bg-gray-800 dark:bg-gray-300 text-black  text-center py-4">
     <p>&copy;WYSC 2024</p>
     <div class="flex justify-center mt-2">
       <a
 
         href="mailto:wysc2024@scrabble.lk"
-        class="text-black dark:text-gray-800 mx-2 hover:text-gray-800 dark:hover:text-gray-800"
+        class="text-black  mx-2 hover:text-gray-800 dark:hover:text-gray-800"
       ><ion-icon name="mail"></ion-icon>
       </a>
       <a
       
         href="https://www.facebook.com/ScrabbleFederationSL"
-        class="text-black dark:text-gray-800 mx-2 hover:text-gray-800 dark:hover:text-gray-800"
+        class="text-black  mx-2 hover:text-gray-800 dark:hover:text-gray-800"
       >
       <ion-icon name="logo-facebook"></ion-icon>
       </a>
       <a
       
         href="https://www.instagram.com/scrabblefederationsl/"
-        class="text-black dark:text-gray-800 mx-3 hover:text-gray-400 dark:hover:text-gray-800"
+        class="text-black  mx-3 hover:text-gray-400 dark:hover:text-gray-800"
       ><ion-icon name="logo-instagram"></ion-icon>
       </a>
     </div>
@@ -360,4 +451,7 @@ world heritage site, is 1.5 hours drive in the opposite direction.
     console.log(table.parentNode.children[1].classList.toggle('hidden'))
     // check here if the toggle stops working ( list index eka )
   }
+</script>
+<script>
+  AOS.init();
 </script>
