@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="images/wyclogo.png" type="image/x-icon">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.cdnfonts.com/css/franklin-gothic?styles=17611" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/ibm-plex-sans" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <style>
+    html{
+      scroll-behavior: smooth;
+    }
+    a,h1,h2,h3{
+      font-family: 'Franklin Gothic';
+
+    }
+    p{
+      font-family: 'IBM Plex Sans', sans-serif;
+                                                
+    }
+    .bg{
+      clip-path: polygon(0 0, 100% 0%, 85% 100%, 0 100%);
+    }
+    @media (max-width:780px){
+      .bg{
+        clip-path: none;
+      }
+    }
+  </style>
+  </style>
+</head>
+<body class="antialiased text-gray-800 bg-gray-100" >
+    <div class="fixed top-0 left-0 right-0 bg-gray-50 shadow-md mb  -5  z-50  h-100" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex justify-between items-center py-4 lg:justify-start lg:space-x-10">
+            <div class="flex justify-start lg:w-0 lg:flex-1">
+              <img id='citrus' src="images/wyclogo.png" class="w-6" onmouseover='document.getElementById("citrus").src="https://www.srilankascrabbleleague.lk/static/citrus.png"' onmouseleave='document.getElementById("citrus").src="images/wyclogo.png"'>&nbsp;
+              <a href="#" class="text-gray-900 text-base font-medium hover:text-gray-600" style="color: #1e3653;">WYSC & SLIO <span class="text-orange-500">2024</span></a>&nbsp;
+            </div>
+            <nav class="lg:block hidden space-x-10" id="menu">
+              <a href="#about" class="text-base font-medium text-gray-900 hover:text-orange-500 block lg:inline-block">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Register</a>
+              <a href="#schedule" class="text-base font-medium text-gray-900 hover:text-orange-500 block lg:inline-block">Quotas</a>
+              <a href="#venue" class="text-base font-medium text-gray-900 hover:text-orange-500 block lg:inline-block">Schedule</a>
+              
+            </nav>
+            <button class="lg:hidden text-black">
+              <ion-icon name="menu" id="menuBtn"></ion-icon>
+            </button>
+          </div>
+        </div>
+        
+        
+      </div>
+      <div>
+        <p class="text-4xl font-extrabold text-center pt-10 mt-10">World Youth Scrabble Championship 2024</p>
+      </div>
+      <div class="p-10">
+        <h2 class="text-3xl font-bold text-center py-10">Country Quotas</h2>
+        
+
+<div class="relative overflow-x-auto grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-3">
+    <table class="max-w-5xl m-auto text-sm text-left rtl:text-right text-gray-500 p-5 bg-gray-150 shadow-xl rounded-md ">
+        <thead class="text-xs text-gray-700 uppercase bg-orange-100">
+            <tr>
+                <th class="border-r-2"></th>
+                <th scope="col" class="px-6 py-3 text-center border-r-2">
+                    Country 
+                </th>
+               
+                <th scope="col" class="px-6 py-3 text-center border-r-2">
+                    Quota 
+                </th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="bg-white border-b">
+                <td class="p-5">1</td>
+                <td scope="" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                    <div class="flex gap-2"><img src="images/flags/FLAGAUS.png" class="w-10 h-5">
+                    <p class="">Australia</p></div>
+                </td>
+               
+                <td class="px-6 py-4 text-center">
+                    06
+                </td>
+                
+            </tr>
+            <tr class="bg-orange-100 border-b">
+                <td class="p-5">2</td>
+                <td scope="" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                    <div class="flex gap-2"><img src="images/flags/FLAGBNG.png" class="w-10 h-5">
+                    <p class="">Bangladesh</p></div>
+                </td>
+               
+                <td class="px-6 py-4 text-center">
+                    04
+                </td>
+                
+            </tr>
+            <tr class="bg-white border-b">
+                <td class="p-5">3</td>
+                <td scope="" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                    <div class="flex gap-2"><img src="images/flags/FLAGUK.png" class="w-10 h-5">
+                    <p class="">England</p></div>
+                </td>
+               
+                <td class="px-6 py-4 text-center">
+                    04
+                </td>
+                
+            </tr><tr class="bg-orange-100 border-b">
+                <td class="p-5">4</td>
+                <td scope="" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                    <div class="flex gap-2"><img src="images/flags/FLAGAUS.png" class="w-10 h-5">
+                    <p class="">Hong Kong</p></div>
+                </td>
+               
+                <td class="px-6 py-4 text-center">
+                    10
+                </td>
+                
+            </tr><tr class="bg-white border-b">
+                <td class="p-5">5</td>
+                <td scope="" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                    <div class="flex gap-2"><img src="images/flags/FLAGIND.png" class="w-10 h-5">
+                    <p class="">India</p></div>
+                </td>
+               
+                <td class="px-6 py-4 text-center">
+                    10
+                </td>
+                
+            </tr><tr class="bg-orange-100 border-b">
+                <td class="p-5">6</td>
+                <td scope="" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                    <div class="flex gap-2"><img src="images/flags/FLAGIDN.jpeg" class="w-10 h-5">
+                    <p class="">Indonesia</p></div>
+                </td>
+               
+                <td class="px-6 py-4 text-center">
+                    04
+                </td>
+                
+            </tr><tr class="bg-white border-b">
+                <td class="p-5">7</td>
+                <td scope="" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                    <div class="flex gap-2"><img src="images/flags/FLAGKEN.png" class="w-10 h-5">
+                    <p class="">Kenya</p></div>
+                </td>
+               
+                <td class="px-6 py-4 text-center">
+                    10
+                </td>
+                
+            </tr>
+        </tbody>
+    </table>
+    
+    <table class="max-w-5xl m-auto text-sm text-left rtl:text-right text-gray-500 p-5 bg-gray-150 shadow-xl rounded-md">
+        <thead class="text-xs text-gray-700 uppercase bg-orange-100">
+            <tr>
+                <th class="border-r-2"></th>
+                <th scope="col" class="px-6 py-3 text-center border-r-2">
+                    Country 
+                </th>
+               
+                <th scope="col" class="px-6 py-3 text-center border-r-2">
+                    Quota 
+                </th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="bg-white border-b">
+                <td class="p-5">8</td>
+                <td scope="" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                    <div class="flex gap-2"><img src="images/flags/FLAGMYS.png" class="w-10 h-5">
+                    <p class="">Malaysia</p></div>
+                </td>
+               
+                <td class="px-6 py-4 text-center">
+                    10
+                </td>
+                
+            </tr>
+            <tr class="bg-orange-100 border-b">
+                <td class="p-5">9</td>
+                <td scope="" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                    <div class="flex gap-2"><img src="images/flags/FLAGNEP.jpeg" class="w-10 h-5">
+                    <p class="">Nepal</p></div>
+                </td>
+               
+                <td class="px-6 py-4 text-center">
+                    04
+                </td>
+                
+            </tr>
+            <tr class="bg-white border-b">
+                <td class="p-5">10</td>
+                <td scope="" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                    <div class="flex gap-2"><img src="images/flags/FLAGNZD.png" class="w-10 h-5">
+                    <p class="">New Zealand</p></div>
+                </td>
+               
+                <td class="px-6 py-4 text-center">
+                    04
+                </td>
+                
+            </tr><tr class="bg-orange-100 border-b">
+                <td class="p-5">11</td>
+                <td scope="" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                    <div class="flex gap-2"><img src="images/flags/FLAGNGA.png" class="w-10 h-5">
+                    <p class="">Nigeria</p></div>
+                </td>
+               
+                <td class="px-6 py-4 text-center">
+                    04
+                </td>
+                
+            </tr><tr class="bg-white border-b">
+                <td class="p-5">12</td>
+                <td scope="" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                    <div class="flex gap-2"><img src="images/flags/FLAGPAK.jpeg" class="w-10 h-5">
+                    <p class="">Pakistan</p></div>
+                </td>
+               
+                <td class="px-6 py-4 text-center">
+                    10
+                </td>
+                
+            </tr><tr class="bg-orange-100 border-b">
+                <td class="p-5">13</td>
+                <td scope="" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                    <div class="flex gap-2"><img src="images/flags/FlagPhilippines.png" class="w-10 h-5">
+                    <p class="">Phillipines</p></div>
+                </td>
+               
+                <td class="px-6 py-4 text-center">
+                    04
+                </td>
+                
+            </tr><tr class="bg-white border-b">
+                <td class="p-5">14</td>
+                <td scope="" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                    <div class="flex gap-2"><img src="images/flags/FLAGQTR.png" class="w-10 h-5">
+                    <p class="">Qatar</p></div>
+                </td>
+               
+                <td class="px-6 py-4 text-center">
+                    08
+                </td>
+                
+            </tr>
+        </tbody>
+    </table>
+    <table class="max-w-5xl m-auto text-sm text-left rtl:text-right text-gray-500 p-5 bg-gray-150 shadow-xl rounded-md">
+        <thead class="text-xs text-gray-700 uppercase bg-orange-100">
+            <tr>
+                <th class="border-r-2"></th>
+                <th scope="col" class="px-6 py-3 text-center border-r-2">
+                    Country 
+                </th>
+               
+                <th scope="col" class="px-6 py-3 text-center border-r-2">
+                    Quota 
+                </th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="bg-white border-b">
+                <td class="p-5">15</td>
+                <td scope="" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                    <div class="flex gap-2"><img src="images/flags/FlagRMN.png" class="w-10 h-5">
+                    <p class="">Romania</p></div>
+                </td>
+               
+                <td class="px-6 py-4 text-center">
+                    04
+                </td>
+                
+            </tr>
+            <tr class="bg-orange-100 border-b">
+                <td class="p-5">16</td>
+                <td scope="" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                    <div class="flex gap-2"><img src="images/flags/FLAGSNG.jpeg" class="w-10 h-5">
+                    <p class="">Singapore</p></div>
+                </td>
+               
+                <td class="px-6 py-4 text-center">
+                    10
+                </td>
+                
+            </tr>
+            <tr class="bg-white border-b">
+                <td class="p-5">17</td>
+                <td scope="" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                    <div class="flex gap-2"><img src="images/flags/FLAGSAF.jpeg" class="w-10 h-5">
+                    <p class="">South Africa</p></div>
+                </td>
+               
+                <td class="px-6 py-4 text-center">
+                    04
+                </td>
+                
+            </tr><tr class="bg-orange-100 border-b">
+                <td class="p-5">18</td>
+                <td scope="" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                    <div class="flex gap-2"><img src="images/flags/FLAGTHA.png" class="w-10 h-5">
+                    <p class="">Thailand</p></div>
+                </td>
+               
+                <td class="px-6 py-4 text-center">
+                    10
+                </td>
+                
+            </tr><tr class="bg-white border-b">
+                <td class="p-5">19</td>
+                <td scope="" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                    <div class="flex gap-2"><img src="images/flags/FLAGTAB.png" class="w-10 h-5">
+                    <p class="">Tinidad and Tobago</p></div>
+                </td>
+               
+                <td class="px-6 py-4 text-center">
+                    04
+                </td>
+                
+            </tr><tr class="bg-orange-100 border-b">
+                <td class="p-5">20</td>
+                <td scope="" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                    <div class="flex gap-2"><img src="images/flags/FLAGUSA.png" class="w-10 h-5">
+                    <p class="">United States</p></div>
+                </td>
+               
+                <td class="px-6 py-4 text-center">
+                    10
+                </td>
+                
+            </tr>
+            
+        </tbody>
+    </table>
+</div>
+
+      </div>
+
+</body>
+<footer class="bg-gray-800 dark:bg-gray-300 text-black  text-center py-4">
+    <p>&copy;WYSC 2024</p>
+    <div class="flex justify-center mt-2">
+      <a
+
+        href="mailto:wysc2024@scrabble.lk"
+        class="text-black  mx-2 hover:text-gray-800 dark:hover:text-gray-800"
+      ><ion-icon name="mail"></ion-icon>
+      </a>
+      <a
+      
+        href="https://www.facebook.com/ScrabbleFederationSL"
+        class="text-black  mx-2 hover:text-gray-800 dark:hover:text-gray-800"
+      >
+      <ion-icon name="logo-facebook"></ion-icon>
+      </a>
+      <a
+      
+        href="https://www.instagram.com/scrabblefederationsl/"
+        class="text-black  mx-3 hover:text-gray-400 dark:hover:text-gray-800"
+      ><ion-icon name="logo-instagram"></ion-icon>
+      </a>
+    </div>
+  </footer>
+</html>
+<script>
+    AOS.init();
+</script>
+
+
+        <script>
+            const menuBtn = document.getElementById('menuBtn');
+            const menu = document.getElementById('menu');
+          
+            menuBtn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+                if (menuBtn.name=='menu'){
+                  menuBtn.name='close'
+                }
+                else{
+                  menuBtn.name = 'menu'
+                }
+            });
+          </script>
+          
