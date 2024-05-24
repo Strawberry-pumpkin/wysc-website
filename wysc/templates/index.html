@@ -8,8 +8,9 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.cdnfonts.com/css/franklin-gothic?styles=17611" rel="stylesheet">
   <link href="https://fonts.cdnfonts.com/css/ibm-plex-sans" rel="stylesheet">
-  
-
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>      
+  <script src="static/" defer></script>
 
   <style>
     html{
@@ -531,41 +532,3 @@ world heritage site, is 1.5 hours drive in the opposite direction.
 
 </body>
 </html>
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>      <script>
-  const menuBtn = document.getElementById('menuBtn');
-  const menu = document.getElementById('menu');
-
-  menuBtn.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
-      if (menuBtn.name=='menu'){
-        menuBtn.name='close'
-      }
-      else{
-        menuBtn.name = 'menu'
-      }
-  });
-
-  function carouselchange(num){
-    const elems=document.querySelectorAll("#carousel div")
-    console.log(elems)
-      for (let i=0;i<elems.length;i++){
-      elems[i].style.opacity='0'
-      }
-      elems[num].style.opacity='100%'
-
-  }
-
-  window.onload = (event) => {
-    i=0
-  setInterval(() => {
-    carouselchange(i)
-    i+=1;
-    if (i>2){
-      i=0
-    }
-  }, 5000);
-};
-
-
-</script>
