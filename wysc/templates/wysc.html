@@ -12,7 +12,7 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script> 
-
+<script src="static/script.js" defer></script>
   <style>
     html{
       scroll-behavior: smooth;
@@ -573,107 +573,3 @@
 </html>
 
 
-
-        <script>
-
-
-
-window.addEventListener('scroll', () => {
-        const navbar = document.getElementById('navbar');
-        if (window.scrollY > 0) {
-          
-          navbar.classList.replace('text-white','text-black')
-          navbar.classList.add('shadow-md')
-          navbar.classList.add('backdrop-blur-sm')
-          
-        } else {
-            
-            navbar.classList.replace('text-black','text-white')
-            navbar.classList.remove('shadow-md')
-            navbar.classList.add('backdrop-blur-sm')
-        }
-      });
-
-
-            const menuBtn = document.getElementById('menuBtn');
-            const menu = document.getElementById('menu');
-          
-            menuBtn.addEventListener('click', () => {
-                menu.classList.toggle('hidden');
-                if (menuBtn.name=='menu'){
-                  menuBtn.name='close'
-                }
-                else{
-                  menuBtn.name = 'menu'
-                }
-            });
-
-            
-            function reveal(){
-                let gallery = document.getElementById('gallery');
-                
-                let columns = (gallery.childNodes[3].children)
-                for (let i=0; i<columns.length; i+=1){
-                    const div = document.createElement('div');
-                const img = document.createElement('img');
-
-                img.src = 'images/1.png';
-                img.classList.add('rounded-md')
-                img.classList.add('h-auto')
-                img.classList.add('max-w-full')
-                
-                
-                div.appendChild(img)
-                    columns[i].appendChild(div)
-          
-
-                }
-            }
-          </script>
-          
-        <script>
-            function countdown() {
-                const endDate = new Date("Sep 06, 2024 23:59:59").getTime();
-                const now = new Date().getTime();
-                const timeLeft = endDate - now;
-          
-                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-          
-                if (days<10){
-                document.getElementById("days").innerText = '0' + days;
-                }
-                else{
-                    document.getElementById("days").innerText =  days;
-                }
-                if (hours<10){
-                document.getElementById("hours").innerText = '0' + hours;
-                }
-                else{
-                    document.getElementById("hours").innerText =  hours;
-                }
-                if (minutes<10){
-                document.getElementById("minutes").innerText = '0' + minutes;
-                }
-                else{
-                    document.getElementById("minutes").innerText =  minutes;
-                }
-                if (seconds<10){
-                document.getElementById("seconds").innerText = '0' + seconds;
-                }
-                else{
-                    document.getElementById("seconds").innerText =  seconds;
-                }
-                if (timeLeft < 0) {
-                    clearInterval(timer);
-                    document.getElementById("days").innerText = "0";
-                    document.getElementById("hours").innerText = "0";
-                    document.getElementById("minutes").innerText = "0";
-                    document.getElementById("seconds").innerText = "0";
-                }
-            }
-          
-            const timer = setInterval(countdown, 1000);
-          </script>
