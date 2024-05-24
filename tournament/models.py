@@ -46,6 +46,7 @@ class Tournament(models.Model):
     venue = models.CharField(max_length=100, blank=True, default="To be notified")
 
     fee = models.IntegerField(default=0, blank=True, null=False)
+    payment_info = models.TextField(blank=True, default="To be notified")
 
     @classmethod    
     def tournament_slug(self, name):
@@ -261,7 +262,10 @@ class Participant(models.Model):
     white = models.IntegerField(default=0)
 
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
+    
     payment = models.FileField(null=True, blank=True)
+    passport = models.FileField(null=True, blank=True)
+
     approved_by = models.ForeignKey(User, on_delete=models.PROTECT, related_name='approved_by',null=True,blank=True)
     approved_on = models.DateTimeField(auto_now_add=True, null=True, blank=True)
     approval = models.CharField(max_length=1, choices=APPROVAL_CHOICES, default='U')
