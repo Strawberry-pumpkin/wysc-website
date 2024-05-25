@@ -25,9 +25,6 @@ SECRET_KEY = 'django-insecure-%-ajr039z=sy607g3y88zqtxu&=9_x)daq_^k$llhm9@z7o+z=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -37,12 +34,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'wysc','tournament','profiles','ratings',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.discord',
     'allauth.socialaccount.providers.facebook',
-    'wysc','tournament','profiles','ratings'
+    
 ]
 
 MIDDLEWARE = [
@@ -128,5 +127,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_REDIRECT_URL='/profile/'
 
 from .settings_local import *
