@@ -7,30 +7,30 @@
 
 {% block content %}
 
-<div class="m-5">
-        <h2>{% trans "Register as a player with Sri Lanka Scrabble Federation" %}</h2>    
+<div class="m-12">
+        <h2 class="text-center font-bold text-3xl p-5">{% trans "Register as a player with Sri Lanka Scrabble Federation" %}</h2>    
         <p>Each player should register once. If you have already registered but you have forgotten your password, please try the 
             <a href="/accounts/password/reset/">password reset form</a> if you are unable to reset your password please contact the federation.
-        </p>
-        <p><strong>A player who owns two player ids risks the possibility of being barred from taking part in tournaments.</strong></p>
-        
-        <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
-        
-        <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+        </p><br>
+        <p class="text-orange-500"><strong>*A player who owns two player ids risks the possibility of being barred from taking part in tournaments.</strong></p>
+        <br>
+        <p>{% blocktrans %}Already have an account? Then please <a class="text-orange-400 underline" href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+        <br>
+        <form class="signup max-w-md m-auto shadow-md p-10 rounded-md gap-2" id="signup_form" method="post" action="{% url 'account_signup' %}">
           {% csrf_token %}
           
           {% for field in form %}
-          <div class="form-group">
+          <div class="grid grid-cols-2 p-3">
               <label for="{{ field.id_for_label }}" class="control-label">{{ field.label }}</label>
-              <input type="{{ field.field.widget.input_type }}" name="{{ field.name }}" class="form-control" id="{{ field.id_for_label }}" 
+              <input type="{{ field.field.widget.input_type }}" name="{{ field.name }}" class="p-1 bg-transparent border-b-2  focus:outline-none focus:border-b-orange-300" id="{{ field.id_for_label }}" 
                          placeholder="{{ field.help_text }}" {% if field.field.required %} required {% endif %}>
                 {{ field.errors }}
           </div>
           {% endfor %}
           {% if redirect_field_value %}
-          <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+          <input class="p-5 bg-transparent" type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
           {% endif %}
-          <button type="submit" class="btn btn-primary">{% trans "Sign Up" %} &raquo;</button>
+          <button type="submit" class="border-2 border-orange-500 px-5 py-1 rounded-md text-center m-auto block mt-3 hover:bg-orange-500 hover:text-white">{% trans "Sign Up" %} </button>
         </form>
     
 </div>
