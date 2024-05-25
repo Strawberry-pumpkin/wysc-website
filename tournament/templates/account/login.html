@@ -1,45 +1,46 @@
 {% extends "account/base.html" %}
 
 {% block content %}
-<div class="container mt-5">
+<div class="mt-5 p-10">
     <div class="row justify-content-center">
       <div class="col-md-6">
-        <div class="card">
-          <div class="card-header">Login</div>
-          <div class="card-body">
+        <div class="">
+          <div class="text-3xl text-center font-bold p-10">Login as a player of the Scrabble Federation of Sri Lanka</div>
+          <div class="p-10 max-w-md shadow-md rounded-lg m-auto">
             <form method="post"> 
               {% csrf_token %}
               {% if form.non_field_errors %}
-              <div class="alert alert-danger">{{ form.non_field_errors|join:" " }}</div>
+              <div class="bg-orange-500">{{ form.non_field_errors|join:" " }}</div>
               {% endif %}
-              <div class="mb-3">
+              <div class="grid grid-cols-2 gap-5 p-5">
                 <label for="{{ form.username.id_for_label }}" class="form-label">Username</label>
                 <input type="text" name="login" autofocus="" 
-                        autocapitalize="none" autocomplete="username" maxlength="150" class="form-control"
+                        autocapitalize="none" autocomplete="username" maxlength="150" class="p-1 bg-transparent border-b-2  focus:outline-none focus:border-b-orange-300"
                         id="id_username"
                 >
                 {% if form.username.errors %}
                 <div class="invalid-feedback">{{ form.username.errors|join:" " }}</div>
                 {% endif %}
               </div>
-              <div class="mb-3">
+              <div class="grid grid-cols-2 gap-5 p-5">
                 <label for="{{ form.password.id_for_label }}" class="form-label">Password</label>
                 <input type="password" name="password" autocomplete="current-password"
-                         class="form-control" id="id_password"
+                         class="p-1 bg-transparent border-b-2  focus:outline-none focus:border-b-orange-300" id="id_password"
                 >
                 {% if form.password.errors %}
                 <div class="invalid-feedback">{{ form.password.errors|join:" " }}</div>
                 {% endif %}
               </div>
-              <button type="submit" class="btn btn-primary">Login</button>
+              <button type="submit" class="border-2 border-orange-500 px-5 py-1 rounded-md text-center m-auto block mt-3 hover:bg-orange-500 hover:text-white">Login</button>
             </form>
+            <div class="flex justify-around">
+              <div class="offset-4 justify-content-center col-12">
+                  <a  class="me-5 text-orange-500 hover:underline" href="/accounts/signup/">Sign up</a>
+                  <a class=" text-orange-500 hover:underline" href="/accounts/password/reset/">Reset password</a>
+              </div>
+        </div>
           </div>
-          <div class="row">
-                <div class="offset-4 justify-content-center col-12">
-                    <a  class="me-5" href="/accounts/signup/">Sign up</a>
-                    <a href="/accounts/password/reset/">Reset password</a>
-                </div>
-          </div>
+          
         </div>
       </div>
     </div>
