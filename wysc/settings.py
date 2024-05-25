@@ -35,12 +35,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    'wysc','tournament','profiles','ratings',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.discord',
     'allauth.socialaccount.providers.facebook',
-    'wysc','tournament','profiles','ratings'
+    
 ]
 
 MIDDLEWARE = [
