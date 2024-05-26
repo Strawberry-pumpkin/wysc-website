@@ -22,10 +22,10 @@ class Tournament(models.Model):
     DATA_ENTRY_CHOICES = ((BY_TEAM, 'By Team'), (NON_TEAM, 'Individual Tournament'),
                           (BY_PLAYER, 'By Player'))
 
-    start_date = models.TextField()
-    name = models.TextField()
-    rated = models.IntegerField(default=True)
-    slug = models.TextField(unique=True, blank=True)
+    start_date = models.DateField()
+    name = models.CharField(max_length=256)
+    rated = models.BooleanField(default=False)
+    slug = models.CharField(max_length=256,unique=True, blank=True)
 
     # team size is not null when a team tournament
     team_size = models.IntegerField(blank=True, null=True)
@@ -40,8 +40,12 @@ class Tournament(models.Model):
 
     # this is tournament a private one?
     private = models.BooleanField(default=True, blank=True, null=False)
+
     # are we accepting registrations for this event
     registration_open = models.BooleanField(default=False, blank=True, null=False)
+
+    # Do you need to upload your identification
+    passport_required = models.BooleanField(default=False, blank=True, null=False)
 
     venue = models.CharField(max_length=100, blank=True, default="To be notified")
 
