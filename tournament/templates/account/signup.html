@@ -13,7 +13,7 @@
         <p>Each player should register once. If you have already registered but you have forgotten your password, please try the 
             <a href="/accounts/password/reset/">password reset form</a> if you are unable to reset your password please contact the federation.
         </p><br>
-        <p class="text-orange-500"><strong>*A player who owns two player ids risks the possibility of being barred from taking part in tournaments.</strong></p>
+        <p class="text-orange-500"><strong>Please avoid creating two player ids.</strong></p>
         <br>
         <p>{% blocktrans %}Already have an account? Then please <a class="text-orange-400 underline" href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
         <br>
@@ -24,7 +24,7 @@
           <div class="grid grid-cols-2 p-3">
               <label for="{{ field.id_for_label }}" class="control-label">{{ field.label }}</label>
               <input type="{{ field.field.widget.input_type }}" name="{{ field.name }}" class="p-1 bg-transparent border-b-2  focus:outline-none focus:border-b-orange-300" id="{{ field.id_for_label }}" 
-                         placeholder="{{ field.help_text }}" {% if field.field.required %} required {% endif %}>
+                          {% if field.field.required %} required {% endif %}>
                 {{ field.errors }}
           </div>
           {% endfor %}  
