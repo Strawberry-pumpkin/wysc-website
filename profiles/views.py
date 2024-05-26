@@ -22,7 +22,7 @@ def edit(request):
                       'gender': profile.gender,
                       'display_name': profile.preferred_name,
                       'date_of_birth': profile.date_of_birth,
-                      'organization' : profile.organization
+                      'country' : profile.country
             }
         )
     else:
@@ -33,7 +33,7 @@ def edit(request):
             profile.gender = form.cleaned_data['gender']
             profile.preferred_name = form.cleaned_data['display_name']
             profile.date_of_birth = form.cleaned_data['date_of_birth']
-            profile.organization = form.cleaned_data['organization']
+            profile.country = form.cleaned_data['country']
             profile.save()
 
             return redirect('/profile/connect/')
@@ -83,11 +83,10 @@ def connect(request):
             redirect('/profile/')
 
         wespa = search_names("wespa", profile.preferred_name)
-        national = search_names("national", profile.preferred_name)
-        unrated = search_names("unrated", profile.preferred_name)
+
         
         return render(request, 'profiles/connect.html', 
-                { "wespa": wespa, "national": national, "unrated": unrated }
+                { "wespa": wespa}
         )
     
     else:

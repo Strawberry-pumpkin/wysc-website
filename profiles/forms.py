@@ -3,6 +3,12 @@ from django.core.validators import RegexValidator
 
 from tournament.models import Participant
 
+import pycountry
+
+# Generate a list of tuples for country choices
+COUNTRIES = [(country.alpha_2, country.name) for country in pycountry.countries]
+
+
 class PaymentForm(forms.Form):
     tournament = forms.IntegerField(widget=forms.HiddenInput())
     payment = forms.FileField(required=False)
@@ -56,11 +62,5 @@ class UserProfileForm(forms.Form):
         label='Phone Number',
     )
 
-    organization = forms.CharField(
-        widget=forms.TextInput(
-            attrs={'class': 'form-control', 'required': False,
-                   'placeholder': "Leave blank if you are not a student"}
-        ),
-        max_length=128, required=False,
-        label='School / University (if a student)',
-    )
+    country = forms.ChoiceField(choices=COUNTRIES, label="Select Country", widget=forms.Select(attrs={'class': 'form-control'}))
+
