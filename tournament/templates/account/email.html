@@ -1,3 +1,16 @@
+<style>
+  .add_email input{
+    background-color: transparent;
+    padding: 5px;
+    
+    
+  }
+  .add_email input:focus{
+    border-bottom: 2px orange solid;
+    outline: none;
+  }
+</style>
+
 {% extends "account/base.html" %}
 
 {% load i18n %}
@@ -5,52 +18,52 @@
 {% block head_title %}{% trans "Account" %}{% endblock %}
 
 {% block content %}
-    <h1>{% trans "E-mail Addresses" %}</h1>
+    <h1 class="text-center font-bold text-2xl p-2">{% trans "E-mail Addresses" %}</h1>
 {% if user.emailaddress_set.all %}
-<p>{% trans 'The following e-mail addresses are associated with your account:' %}</p>
-
+<p class="text-center">{% trans 'The following e-mail addresses are associated with your account:' %}</p>
+<br>
 <form action="{% url 'account_email' %}" class="email_list" method="post">
 {% csrf_token %}
 <fieldset class="blockLabels">
 
   {% for emailaddress in user.emailaddress_set.all %}
-<div class="ctrlHolder">
+<div class="ctrlHolder text-center">
       <label for="email_radio_{{forloop.counter}}" class="{% if emailaddress.primary %}primary_email{%endif%}">
 
-      <input id="email_radio_{{forloop.counter}}" type="radio" name="email" {% if emailaddress.primary or user.emailaddress_set.count == 1 %}checked="checked"{%endif %} value="{{emailaddress.email}}"/>
+      <input class="text-2xl"  id="email_radio_{{forloop.counter}}" type="radio" name="email" {% if emailaddress.primary or user.emailaddress_set.count == 1 %}checked="checked"{%endif %} value="{{emailaddress.email}}"/>
 
 {{ emailaddress.email }}
     {% if emailaddress.verified %}
-    <span class="verified">{% trans "Verified" %}</span>
+    <span class="verified text-green-500">{% trans "Verified" %}</span>
     {% else %}
     <span class="unverified">{% trans "Unverified" %}</span>
     {% endif %}
-      {% if emailaddress.primary %}<span class="primary">{% trans "Primary" %}</span>{% endif %}
+      {% if emailaddress.primary %}<span class="text-blue-500">{% trans "Primary" %}</span>{% endif %}
 </label>
 </div>
   {% endfor %}
 
-<div class="buttonHolder">
-      <button class="secondaryAction" type="submit" name="action_primary" >{% trans 'Make Primary' %}</button>
-      <button class="secondaryAction" type="submit" name="action_send" >{% trans 'Re-send Verification' %}</button>
-      <button class="primaryAction" type="submit" name="action_remove" >{% trans 'Remove' %}</button>
+<div class="buttonHolder md:grid grid-cols-3 grid-cols-2  gap-3 max-w-xl p-5 m-auto">
+      <button class="secondaryAction px-2 py-1 rounded-md border-2 border-blue-800 hover:bg-blue-800 hover:text-white text-blue-800 " type="submit" name="action_primary" >{% trans 'Make Primary' %}</button>
+      <button class="secondaryAction px-2 py-1 rounded-md hover:bg-yellow-500 hover:text-white border-2 border-yellow-500 text-yellow-500" type="submit" name="action_send" >{% trans 'Re-send Verification' %}</button>
+      <button class="primaryAction px-2 py-1 rounded-md hover:bg-red-500 hover:text-white border-2 text-red-500 border-red-500" type="submit" name="action_remove" >{% trans 'Remove' %}</button>
 </div>
 
 </fieldset>
 </form>
 
 {% else %}
-<p><strong>{% trans 'Warning:'%}</strong> {% trans "You currently do not have any e-mail address set up. You should really add an e-mail address so you can receive notifications, reset your password, etc." %}</p>
+<p class="text-center font-bold"><strong>{% trans 'Warning:'%}</strong> {% trans "You currently do not have any e-mail address set up. You should really add an e-mail address so you can receive notifications, reset your password, etc." %}</p>
 
 {% endif %}
 
 
-    <h2>{% trans "Add E-mail Address" %}</h2>
+    <h2 class="text-center font-semibold p-3">{% trans "Add E-mail Address" %}</h2>
 
-    <form method="post" action="{% url 'account_email' %}" class="add_email">
+    <form method="post" action="{% url 'account_email' %}" class="add_email flex justify-center max-w-full gap-3 p-2">
         {% csrf_token %}
         {{ form.as_p }}
-        <button name="action_add" type="submit">{% trans "Add E-mail" %}</button>
+        <button name="action_add" type="submit" class="border-2 border-orange-500 px-5 py-1 text-center rounded-md hover:bg-orange-500 hover:text-white">{% trans "Add E-mail" %}</button>
     </form>
 
 {% endblock %}

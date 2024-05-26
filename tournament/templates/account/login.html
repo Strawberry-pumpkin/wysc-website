@@ -10,7 +10,7 @@
             <form method="post"> 
               {% csrf_token %}
               {% if form.non_field_errors %}
-              <div class="bg-orange-500">{{ form.non_field_errors|join:" " }}</div>
+              <div class="bg-transparent text-red-500">{{ form.non_field_errors|join:" " }}</div>
               {% endif %}
               <div class="grid grid-cols-2 gap-5 p-5">
                 <label for="{{ form.username.id_for_label }}" class="form-label">Username</label>
