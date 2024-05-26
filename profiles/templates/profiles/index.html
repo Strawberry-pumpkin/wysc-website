@@ -1,22 +1,22 @@
 {% extends "profiles/base.html" %}
 {% block content %}
-    <div class="m5">
-        <div class="row mt-3">
-            <div class="col-10">
+    <div class="m-5">
+        <div class="flex mt-3">
+            <div class="w-4/5">
                 <a href="/profile/edit/"><h3 class="">{{ request.user.profile.preferred_name }}</h3></a>
             </div>
-            <div class="col-2">
+            <div class="w-1/5">
                 <a href="/accounts/logout/">Logout</a>
             </div>
         </div>
         <h4 class="mt-3">Upcoming tournaments</h4>
         
         {% for t in tournaments %}
-            <div class="row mb-2">
-                <div class="col-3">{{ t.name }}</div>
-                <div class="col-3">{{ t.venue }}</div>
-                <div class="col-3">{{ t.start_date }}</div>
-                <div class="col-2">
+            <div class="flex mb-2">
+                <div class="w-3/12">{{ t.name }}</div>
+                <div class="w-3/12">Venue : {{ t.venue }}</div>
+                <div class="w-3/12">Date : {{ t.start_date }}</div>
+                <div class="w-2/12">
                     {% if t.registered %}
                         You are registered
                     {% else %}
@@ -35,8 +35,10 @@
         {% endfor %}
         <div>{{ error }}</div>
 
-        <a class="btn btn-primary" href="/profile/edit/">Edit Profile</a>
-        <a class="btn btn-primary" href="/profile/payment/">Payments</a>
+        <div class="flex justify-center mt-4">
+            <a class="btn btn-primary mx-2" href="/profile/edit/">Edit Profile</a>
+            <a class="btn btn-primary mx-2" href="/profile/payment/">Payments</a>
+        </div>
 
     </div>
 {% endblock %}

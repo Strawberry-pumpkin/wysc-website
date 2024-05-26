@@ -4,7 +4,7 @@ Views for creating, editing and viewing user profiles.
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.postgres.search import TrigramSimilarity
-from django.db.models import Case, When, Value, BooleanField, Q
+from django.db.models import Subquery, Q
 from django.utils import timezone
 
 from profiles.forms import UserProfileForm, PaymentForm
@@ -40,27 +40,24 @@ def edit(request):
     return render(request, 'profiles/names.html', {
         "form": form}) 
 
+from django.db.models import Subquery, OuterRef
 
-@login_required
 def index(request):
-    """Wait till confirmation is recieved"""
+    """Wait till confirmation is received"""
     profile = request.user.profile
     if not profile.full_name:
         return edit(request)   
     else:
-        tournaments = list(Tournament.objects.filter(
+        
+        tournaments = Tournament.objects.filter(
             Q(start_date__gte=timezone.now()) & Q(registration_open=True)
-        ))
-        user_participation = Participant.objects.filter(user=request.user).values_list('tournament', flat=True)
-
-        # Annotate the queryset with a 'registered' field
-        for tournament in tournaments:
-            tournament.registered = tournament.id in user_participation
-            if 'Galle' in tournament.name or 'Colombo' in tournament.name:
-                tournament.closed = True
-                
+        )
+        for t in tournaments:
+            p = t.participants.filter(user=request.user)
+            if p.exists():
+                t.registered = p.first()
+            
         return render(request, 'profiles/index.html', {'tournaments': tournaments})
-
 
 def search_names(rtype, name):
     if rtype == "wespa":
