@@ -21,32 +21,31 @@ def redirect_view(request):
 
 
 def register(request):
-    if request.user.is_authenticated:
-        if request.method == "POST":
-            t = Tournament.objects.get(pk=request.POST.get('tournament'))
-            if "Junior" in t.name:
-                junior = Tournament.objects.filter(name__icontains="Junior")
-                tournaments = Participant.objects.filter(
-                    Q(user=request.user) &  Q(tournament__in=junior) &
-                    Q(tournament__start_date__gte=timezone.now()) &
-                    Q(tournament__registration_open=True)
-                )
+    if request.user.is_authenticated and request.method == "POST":
+        t = Tournament.objects.get(pk=request.POST.get('tournament'))
+        if "Junior" in t.name:
+            junior = Tournament.objects.filter(name__icontains="Junior")
+            tournaments = Participant.objects.filter(
+                Q(user=request.user) &  Q(tournament__in=junior) &
+                Q(tournament__start_date__gte=timezone.now()) &
+                Q(tournament__registration_open=True)
+            )
 
-                if tournaments.exists():
-                    #
-                    # this player has registered for a different zonal event. Let's delete that
-                    #                     
-                    tournaments.delete()
-                
-                Participant.objects.create(
-                    user=request.user, tournament=t,name=request.user.profile.preferred_name,
-                )
-                return redirect('/profile/')
-            else:
-                Participant.objects.create(
-                    user=request.user, tournament=t,name=request.user.profile.preferred_name,
-                )
-                return redirect('/profile/')
+            if tournaments.exists():
+                #
+                # this player has registered for a different zonal event. Let's delete that
+                #                     
+                tournaments.delete()
+            
+            Participant.objects.create(
+                user=request.user, tournament=t,name=request.user.profile.preferred_name,
+            )
+            return redirect('/profile/')
+        else:
+            Participant.objects.create(
+                user=request.user, tournament=t,name=request.user.profile.preferred_name,
+            )
+            return redirect('/profile/')
             
     return render(request, 'register.html')
     

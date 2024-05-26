@@ -23,7 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # render the template in wysc/templaces/index.html when the root URL is accessed
     path('', TemplateView.as_view(template_name='index.html'), name='home'),
-    path('wysc', TemplateView.as_view(template_name='wysc.html'), name='home'),
+    path('wysc/', TemplateView.as_view(template_name='wysc.html'), name='home'),
     path('accounts/', include('allauth.urls')),
     path('profile/', include('profiles.urls')),
     path('register/', include('tournament.urls')),

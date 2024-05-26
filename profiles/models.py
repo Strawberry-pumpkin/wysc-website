@@ -66,8 +66,7 @@ class Profile (models.Model):
     preferred_name = models.CharField(max_length=128, blank=True, null=True)
 
     beginner = models.BooleanField(default = False)
-    
-    organization = models.CharField(max_length=128, blank=True, null=True)
+    country = models.CharField(max_length=128, blank=True, null=True)
     
     def save(self, *args, **kwargs):
         """Fill the player_id field.
