@@ -7,6 +7,11 @@ class PaymentForm(forms.Form):
     tournament = forms.IntegerField(widget=forms.HiddenInput())
     payment = forms.FileField(required=False)
 
+
+class PassportForm(forms.Form):
+    passport = forms.FileField(required=True)
+    tournament = forms.IntegerField(widget=forms.HiddenInput())
+
 class UserProfileForm(forms.Form):
     date_of_birth = forms.DateField(
         widget=forms.DateInput(

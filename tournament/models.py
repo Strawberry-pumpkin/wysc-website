@@ -51,7 +51,11 @@ class Tournament(models.Model):
 
     fee = models.IntegerField(default=0, blank=True, null=False)
     payment_info = models.TextField(blank=True, default="To be notified")
-
+    
+    # payment information will be displayed only if advance payment is required
+    # for some tournaments like the WYSC it will be possible to make the payment 
+    # after the tournament has started.
+    advance_payment_required =  models.BooleanField(default=False, blank=True, null=False)
     @classmethod    
     def tournament_slug(self, name):
         ''' Slugify tournament names so that we can use them in links '''

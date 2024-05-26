@@ -7,7 +7,7 @@ from django.contrib.postgres.search import TrigramSimilarity
 from django.db.models import Subquery, Q
 from django.utils import timezone
 
-from profiles.forms import UserProfileForm, PaymentForm
+from profiles.forms import UserProfileForm, PaymentForm, PassportForm
 from ratings.models import Unrated, WespaRating, NationalRating
 from tournament.models import Tournament, Participant
 
@@ -44,11 +44,13 @@ from django.db.models import Subquery, OuterRef
 
 def index(request):
     """Wait till confirmation is received"""
+
     profile = request.user.profile
     if not profile.full_name:
         return edit(request)   
     else:
-        
+        form = PassportForm()
+
         tournaments = Tournament.objects.filter(
             Q(start_date__gte=timezone.now()) & Q(registration_open=True)
         )
@@ -57,7 +59,7 @@ def index(request):
             if p.exists():
                 t.registered = p.first()
             
-        return render(request, 'profiles/index.html', {'tournaments': tournaments})
+        return render(request, 'profiles/index.html', {'tournaments': tournaments, 'form': form})
 
 def search_names(rtype, name):
     if rtype == "wespa":
@@ -102,6 +104,19 @@ def connect(request):
         
         request.user.profile.save()
         return redirect('/profile/')
+
+
+@login_required
+def passport(request):
+    """Upload passport image"""
+    if request.method == 'POST':
+        p = PassportForm(request.POST, request.FILES)
+        if p.is_valid():
+            participant = Participant.objects.get(tournament=p.cleaned_data['tournament'], user=request.user)
+            participant.passport = p.cleaned_data['passport']
+            participant.save()
+            return redirect('/profile/')
+
 
 @login_required
 def payment(request):
