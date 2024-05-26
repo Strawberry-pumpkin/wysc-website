@@ -19,11 +19,24 @@
         {% for t in tournaments %}
             <div class="grid grid-cols-4 mx-auto max-w-6xl">
                 <div class="col-3">{{ t.name }}</div>
-                <div class="col-3">{{ t.venue }}</div>
-                <div class="col-3">{{ t.start_date }}</div>
+                <div class="col-3">Venue: {{ t.venue }}</div>
+                <div class="col-3">Date : {{ t.start_date }}</div>
                 <div class="col-2">
                     {% if t.registered %}
                         You are registered
+                        {% if t.passport_required and not t.registered.passport %}
+                            <form method="post" enctype="multipart/form-data" class="file-upload-form"
+                                action="/profile/passport/">
+                                {{ form.errors }}
+                                {% csrf_token %}
+                                <label for="id_payment">Passport:</label>
+                                <input type="file" name="passport" accept="image/*, .pdf" id="id_payment-{{t.id}}" 
+                                    class="form-input mt-1 block w-full">
+                                <button type="submit" class="upload-button mt-2 btn btn-primary bg-blue-500 text-white py-2 px-4 rounded-md disabled:opacity-50" disabled
+                                    id="submitButton-{{p.tournament.id}}">Upload</button>
+                                <input type="hidden" name="tournament" id="id_tournament" value="{{t.id}}">
+                            </form>
+                        {% endif %}
                     {% else %}
                         {% if t.closed %} 
                             <p>Registration closed</p>
@@ -40,5 +53,27 @@
         {% endfor %}
         <div>{{ error }}</div>
 
+        <div class="flex justify-center mt-4">
+            <a class="btn btn-primary mx-2" href="/profile/edit/">Edit Profile</a>
+            <a class="btn btn-primary mx-2" href="/profile/payment/">Payments</a>
+        </div>
+
     </div>
+
+    <script>
+        const fileInputs = document.querySelectorAll('.form-input');
+        fileInputs.forEach(function(input) {
+            input.addEventListener('change', function(event) {
+                console.log(event.target.files);
+                const form = event.target.closest('.file-upload-form');
+                const submitButton = form.querySelector('.upload-button');
+
+                if (event.target.files.length > 0) {
+                    submitButton.disabled = false;
+                } else {
+                    submitButton.disabled = true;
+                }
+            });
+        });
+    </script>
 {% endblock %}

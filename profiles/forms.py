@@ -3,9 +3,20 @@ from django.core.validators import RegexValidator
 
 from tournament.models import Participant
 
+import pycountry
+
+# Generate a list of tuples for country choices
+COUNTRIES = [(country.alpha_2, country.name) for country in pycountry.countries]
+
+
 class PaymentForm(forms.Form):
     tournament = forms.IntegerField(widget=forms.HiddenInput())
     payment = forms.FileField(required=False)
+
+
+class PassportForm(forms.Form):
+    passport = forms.FileField(required=True)
+    tournament = forms.IntegerField(widget=forms.HiddenInput())
 
 class UserProfileForm(forms.Form):
     date_of_birth = forms.DateField(
@@ -36,7 +47,7 @@ class UserProfileForm(forms.Form):
     display_name = forms.CharField(
         max_length=20,
         widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': "Match your ratings list name. 20 characters max."}),
-        label='Display Name',
+        label='Name in ratings list',
     )
 
     phone_regex = RegexValidator(
@@ -51,11 +62,5 @@ class UserProfileForm(forms.Form):
         label='Phone Number',
     )
 
-    organization = forms.CharField(
-        widget=forms.TextInput(
-            attrs={'class': 'form-control', 'required': False,
-                   'placeholder': "Leave blank if you are not a student"}
-        ),
-        max_length=128, required=False,
-        label='School / University (if a student)',
-    )
+    country = forms.ChoiceField(choices=COUNTRIES, label="Select Country", widget=forms.Select(attrs={'class': 'form-control'}))
+
