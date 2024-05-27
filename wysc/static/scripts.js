@@ -54,25 +54,36 @@ menuBtn.addEventListener('click', () => {
 });
 
 // reveal sets of 4 images for gallery at wysc.html
+max_im = 8
+// no of max images available for the gallery (minus 8 for the defaults)
+// first image goes as wysc-0
+current_count = 7
 function reveal(){
-    let gallery = document.getElementById('gallery');
+    if (max_im-current_count*4>=4){
+        // wont load images unless theres a set of 4 images available
+        let gallery = document.getElementById('gallery');
     
-    let columns = (gallery.childNodes[3].children)
-    for (let i=0; i<columns.length; i+=1){
-        const div = document.createElement('div');
-    const img = document.createElement('img');
-
-    img.src = 'images/1.png';
-    img.classList.add('rounded-md')
-    img.classList.add('h-auto')
-    img.classList.add('max-w-full')
+        let columns = (gallery.childNodes[3].children)
+        for (let i=0; i<columns.length; i+=1){
+            const div = document.createElement('div');
+        const img = document.createElement('img');
     
+        img.src = `/static/images/gallery/wysc-${current_count*4+i}.jpg`;
+        // current count = no of rows,
+        // multiply by four to skip four images in the urls list
+        img.classList.add('rounded-md')
+        img.classList.add('h-auto')
+        img.classList.add('max-w-full')
+        
+        
+        div.appendChild(img)
+            columns[i].appendChild(div)
     
-    div.appendChild(img)
-        columns[i].appendChild(div)
-
+    }
+   
 
     }
+    current_count+=1
 }
 
 // countdown for wysc.html
