@@ -57,7 +57,7 @@ menuBtn.addEventListener('click', () => {
 max_im = 8
 // no of max images available for the gallery (minus 8 for the defaults)
 // first image goes as wysc-0
-current_count = 0
+current_count = 7
 function reveal(){
     if (max_im-current_count*4>=4){
         // wont load images unless theres a set of 4 images available
