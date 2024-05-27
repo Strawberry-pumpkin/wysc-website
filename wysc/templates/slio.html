@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLIO 2024</title>
+    <link rel="shortcut icon" href="images/wyclogo.png" type="image/x-icon">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.cdnfonts.com/css/franklin-gothic?styles=17611" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/ibm-plex-sans" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script> 
+<script src="/static/scripts.js" defer></script>
+  <style>
+    html{
+      scroll-behavior: smooth;
+    }
+    a,h1,h2,h3{
+      font-family: 'Franklin Gothic';
+
+    }
+    p{
+      font-family: 'IBM Plex Sans', sans-serif;
+                                                
+    }
+    .bg{
+      clip-path: polygon(0 0, 100% 0%, 85% 100%, 0 100%);
+    }
+    @media (max-width:780px){
+      .bg{
+        clip-path: none;
+      }
+    }
+#arrow{
+    animation: bob 2s infinite linear;
+}
+
+@keyframes bob {
+    50%{
+        transform: scale(1.1);
+    }
+}
+  </style>
+  </style>
+</head>
+<body class="antialiased text-gray-800 bg-gray-100 overflow-x-hidden" >
+    <div class="fixed top-0 left-0 right-0 bg-gray-50/30  mb  -5  z-50  h-100 text-white" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex justify-between items-center py-4 lg:justify-start lg:space-x-10">
+            <div class="flex justify-start lg:w-0 lg:flex-1">
+              <img id='citrus' src="/static/images/wyclogo.png" class="w-6" o
+              nmouseover='document.getElementById("citrus").src="https://www.srilankascrabbleleague.lk/static/citrus.png"' 
+              onmouseleave='document.getElementById("citrus").src="/static/images/wyclogo.png"'>&nbsp;
+              <a href="/" class="text text-base font-medium">WYSC & SLIO <span class="text-orange-500">2024</span></a>&nbsp;
+            </div>
+            <nav class="lg:block hidden space-x-10 " id="menu" >
+              <a href="/accounts/signup/" class="text-base font-medium  hover:text-orange-500 block lg:inline-block">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Register</a>
+              <a href="#tourney" class="text-base font-medium  hover:text-orange-500 block lg:inline-block">Tournament Format</a>
+              <a href="#schedule" class="text-base font-medium  hover:text-orange-500 block lg:inline-block">Schedule</a>
+              
+            </nav>
+            <button class="lg:hidden">
+              <ion-icon name="menu" id="menuBtn"></ion-icon>
+            </button>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class="h-screen w-full bg-[url('/static/images/wyscbg.jpeg')] overflow-x-hidden bg-cover bg-no-repeat">
+        <div class="backdrop-blur-sm h-screen w-screen absolute top-0 left-0 p-36 ">
+            <p class="text-4xl font-extrabold text-center py-10 mt-10 text-white">Sri Lanka International Open Scrabble Championship 2024</p>
+            
+              
+              <div class="flex justify-center  pt-10 pb-4">
+
+                <a
+          
+                  href="mailto:wysc2024@scrabble.lk"
+                  class="text-black text-3xl  mx-2 "
+                >
+                <ion-icon name="mail" class="hover:text-orange-500 text-white"></ion-icon>
+                </a>
+                <a
+          
+                  href="https://www.facebook.com/ScrabbleFederationSL" target="_blank"
+                  class="text-black text-3xl  mx-2 "
+                >
+                <ion-icon name="logo-facebook" class="hover:text-orange-500 text-white"></ion-icon>
+                </a>
+                <a
+          
+                  href="https://www.instagram.com/scrabblefederationsl/" target="_blank"
+                  class="text-black  text-3xl mx-2 "
+                ><ion-icon class="hover:text-orange-500 text-white" name="logo-instagram"></ion-icon>
+                </a>
+              </div> 
+              <a href='/accounts/signup/'  class="m-auto max-w-36 text-center border-2 font-medium hover:text-orange-500 bg-orange-100 block hover:border-orange-500 px-5 py-2 rounded-md">Register Now</a>
+        </div>
+        </div>
+        
+      </div>
+      <div class="p-10 max-w-2xl m-auto " id="tourney">
+        <h2 class="text-3xl font-bold text-center py-10" style="color: #1e3653;" >Game Format</h2>
+        <div class="overflow-x-auto overflow-y-hidden">
+            <table class=" m-auto text-sm text-left rtl:text-right text-gray-500 p-5 bg-gray-150 shadow-xl rounded-md "      >
+            <thead class="text-xs text-gray-700 uppercase bg-orange-100">
+                <tr>
+                    
+                    <th scope="col" class="px-6 py-3 text-center border-r-2">
+                        Category 
+                    </th>
+                   
+                    <th scope="col" class="px-6 py-3 text-center border-r-2">
+                        No. Of Games 
+                    </th>
+                    
+                    <th scope="col" class="px-6 py-3 text-center border-r-2">
+                        Dictionary
+                    </th>
+                    
+                    <th scope="col" class="px-6 py-3 text-center border-r-2">
+                        Challenge Rule 
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="bg-white border-b">
+                    <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap text-center">Open</td>
+                    <td  class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap text-center">
+                        
+                        24
+                    </td>
+                   
+                    <td class="px-6 py-4 text-center font-medium whitespace-nowrap text-gray-900">
+                        CSW 21
+                    </td>
+                    <td class="px-6 py-4 text-center font-medium whitespace-nowrap text-gray-900">
+                        5 Point Challenge
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+        <h2 class="text-2xl font-bold text-center py-10" style="color: #1e3653;"  >Pairing Format</h2>
+        <dl class="max-w-xl mx-auto"   >
+            <dd class="font-semibold"><span class="font-bold">Day 1</span> - Swiss draw with no lags and no repeats</dd>
+            <br>
+            <dd class="font-semibold"><span class="font-bold">Day 2</span> - Swiss draw with no lags 1 repeat 
+                <dt class="italic">(At the end of the second day, a player may have met the same opponent a maximum of two times)</dt>
+            </dd>
+            <br>
+            <dd class="font-semibold"><span class="font-bold">Day 3</span> - Swiss draw with no lags, 2 repeats until round 20 and 3 by round 23
+            <dt class="italic">(Which means at the end of round 23, a player may have faced the same opponent upto 4 times). <b>The 24th round introduces one more repeat.</b></dt></dd>
+
+        </ul>
+      </div>
+
+      <div id="schedule" class="py-12 bg-gray-150 grid grid-cols-1" >
+        <div class="max-w-6xl mx-auto px-4 py-10 " >
+            <div class="text-center mb-12">
+              <hr>
+              <br>
+              <h1 class="text-3xl font-bold text-gray-800 dark:text-white" style="color: #1e3653;">SLIO Schedule</h1>
+      
+            </div>
+            <div class="grid md:grid-cols-3 grid-cols-1 gap-4">
+      
+      
+      
+          <div class="p-4 bg-gray-200 rounded-lg shadow-lg hover:shadow-md">
+            <div class="bg-gray-200 text-black text-center p-4 rounded-md cursor-pointer" onclick="viewtable(this)">
+               <p class="">Day 01 | <b>13th September</b></p>
+            </div>
+      
+      
+            </div>
+      
+      
+      
+        <div class="grid grid-cols-1 gap-4">
+          <div class="p-4 bg-gray-200 rounded-lg shadow-lg hover:shadow-md">
+            <div class="bg-gray-200 text-black text-center p-4 rounded-md cursor-pointer" onclick="viewtable(this)">
+               <p class="">Day 02 | <b>14th September</b></p>
+            </div>
+          </div>      
+        </div>
+      
+        <div class="p-4 bg-gray-200 rounded-lg shadow-lg hover:shadow-md">
+          <div class="bg-gray-200 text-black text-center p-4 rounded-md cursor-pointer" onclick="viewtable(this)">
+             <p class="">Day 03 | <b>15th September</b></p>
+          </div>
+      
+      
+          </div>
+  </div>
+
+      </div>
+      <div class="p-10">
+        <h1 class="text-3xl font-bold text-center pb-10" style="color: #1e3653;"  >Registration Fee</h1>
+        <table class="max-w-5xl m-auto text-sm text-left rtl:text-right text-gray-500 p-5 bg-gray-150 shadow-xl rounded-md "   >
+            <thead class="text-xs text-gray-700 uppercase bg-orange-100">
+                <tr>
+                    
+                    <th scope="col" class="px-6 py-3 text-center border-r-2">
+                        Category 
+                    </th>
+                   
+                    <th scope="col" class="px-6 py-3 text-center border-r-2">
+                        Registration Fee 
+                    </th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr class=" border-b">
+                    
+                    <td  class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                        
+                        <p class="">All Players</p>
+                    </td>
+                   
+                    <td class="px-6 py-4 text-center font-extrabold">
+                        US $100
+                    </td>
+                    
+                </tr>
+            </tbody>
+        </table>
+      </div>
+</body>
+<footer class="bg-gray-800 dark:bg-gray-300 text-black  text-center py-4">
+    <p>&copy;WYSC 2024</p>
+    <div class="flex justify-center mt-2">
+      <a
+
+        href="mailto:wysc2024@scrabble.lk"
+        class="text-black  mx-2 hover:text-gray-800 dark:hover:text-gray-800"
+      ><ion-icon name="mail"></ion-icon>
+      </a>
+      <a
+      
+        href="https://www.facebook.com/ScrabbleFederationSL" target="_blank"
+        class="text-black  mx-2 hover:text-gray-800 dark:hover:text-gray-800"
+      >
+      <ion-icon name="logo-facebook"></ion-icon>
+      </a>
+      <a
+      
+        href="https://www.instagram.com/scrabblefederationsl/" target="_blank"
+        class="text-black  mx-3 hover:text-gray-400 dark:hover:text-gray-800"
+      ><ion-icon name="logo-instagram"></ion-icon>
+      </a>
+    </div>
+  </footer>
+</html>
+
+
