@@ -14,14 +14,24 @@
 
             </div>
         </div>
-        <h4 class="mt-5 text-2xl font-bold text-center">Upcoming tournaments</h4>
-        
+        <h4 class="mt-5 text-2xl font-bold text-center p-5">Upcoming tournaments</h4>
+        <table class=' m-auto text-sm text-left rtl:text-right text-gray-500 p-5 bg-gray-150 shadow-xl rounded-md'>
+            <thead>
+                <tr>
+                    <th>Event</th>
+                    <th>Venue</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
         {% for t in tournaments %}
-            <div class="grid grid-cols-4 mx-auto max-w-6xl">
-                <div class="col-3">{{ t.name }}</div>
-                <div class="col-3">Venue: {{ t.venue }}</div>
-                <div class="col-3">Date : {{ t.start_date }}</div>
-                <div class="col-2">
+            <tr>
+                <td>{{ t.name }}</td>
+                <td>{{ t.venue }}</td>
+                <td>{{ t.start_date }}</td>
+                <td>
+                    <div class="col-2">
                     {% if t.registered %}
                         You are registered
                         {% if t.passport_required and not t.registered.passport %}
@@ -49,7 +59,8 @@
                         {% endif %}
                     {% endif %}
                 </div>
-            </div>
+                </td>
+            </tr>
         {% endfor %}
         <div>{{ error }}</div>
 
