@@ -490,12 +490,14 @@ window.addEventListener('scroll', () => {
   navbar.classList.replace('text-white','text-black')
   navbar.classList.add('shadow-md')
   navbar.classList.add('backdrop-blur-sm')
+  navbar.classList.toggle('hidden')
   
   } else {
   
   navbar.classList.replace('text-black','text-white')
   navbar.classList.remove('shadow-md')
   navbar.classList.add('backdrop-blur-sm')
+  navbar.classList.toggle('hidden')
   }
   });
   
