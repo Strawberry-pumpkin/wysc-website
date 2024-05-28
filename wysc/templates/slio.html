@@ -12,7 +12,7 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script> 
-<script src="/static/scripts.js" defer></script>
+
   <style>
     html{
       scroll-behavior: smooth;
@@ -69,7 +69,7 @@
         
       </div>
 
-      <div class="h-screen w-full bg-[url('wysc/static/images/bg.jpeg')] overflow-x-hidden bg-cover bg-no-repeat">
+      <div class="h-screen w-full bg-[url('wysc/static/images/bg.jpg')] overflow-x-hidden bg-cover bg-no-repeat">
         <div class="backdrop-blur-sm h-screen w-screen absolute top-0 left-0 p-36 ">
             <img src="/static/images/sliologo.png" alt="" class="max-w-52 m-auto ">
             <p class="text-4xl font-extrabold text-center pb-10 mt-10 text-white">Sri Lanka International Open Scrabble Championship <br> 2024</p>
@@ -260,28 +260,6 @@
 
 
 <script>
-  // carousel for accomodation at index.html
-function carouselchange(num){
-  const elems=document.querySelectorAll("#carousel div")
-  console.log(elems)
-    for (let i=0;i<elems.length;i++){
-    elems[i].style.opacity='0'
-    }
-    elems[num].style.opacity='100%'
-
-}
-
-window.onload = (event) => {
-  i=0
-setInterval(() => {
-  carouselchange(i)
-  i+=1;
-  if (i>2){
-    i=0
-  }
-}, 5000);
-};
-
 
 
 // navbar of wysc.html
@@ -314,84 +292,5 @@ menuBtn.addEventListener('click', () => {
       menuBtn.name = 'menu'
   }
 });
-
-// reveal sets of 4 images for gallery at wysc.html
-max_im = 8
-// no of max images available for the gallery (minus 8 for the defaults)
-// first image goes as wysc-0
-current_count = 7
-function reveal(){
-  if (max_im-current_count*4>=4){
-      // wont load images unless theres a set of 4 images available
-      let gallery = document.getElementById('gallery');
-  
-      let columns = (gallery.childNodes[3].children)
-      for (let i=0; i<columns.length; i+=1){
-          const div = document.createElement('div');
-      const img = document.createElement('img');
-  
-      img.src = `/static/images/gallery/wysc-${current_count*4+i}.jpg`;
-      // current count = no of rows,
-      // multiply by four to skip four images in the urls list
-      img.classList.add('rounded-md')
-      img.classList.add('h-auto')
-      img.classList.add('max-w-full')
-      
-      
-      div.appendChild(img)
-          columns[i].appendChild(div)
-  
-  }
- 
-
-  }
-  current_count+=1
-}
-
-// countdown for wysc.html
-function countdown() {
-  const endDate = new Date("Sep 06, 2024 23:59:59").getTime();
-  const now = new Date().getTime();
-  const timeLeft = endDate - now;
-
-  const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-  if (days<10){
-  document.getElementById("days").innerText = '0' + days;
-  }
-  else{
-      document.getElementById("days").innerText =  days;
-  }
-  if (hours<10){
-  document.getElementById("hours").innerText = '0' + hours;
-  }
-  else{
-      document.getElementById("hours").innerText =  hours;
-  }
-  if (minutes<10){
-  document.getElementById("minutes").innerText = '0' + minutes;
-  }
-  else{
-      document.getElementById("minutes").innerText =  minutes;
-  }
-  if (seconds<10){
-  document.getElementById("seconds").innerText = '0' + seconds;
-  }
-  else{
-      document.getElementById("seconds").innerText =  seconds;
-  }
-  if (timeLeft < 0) {
-      clearInterval(timer);
-      document.getElementById("days").innerText = "0";
-      document.getElementById("hours").innerText = "0";
-      document.getElementById("minutes").innerText = "0";
-      document.getElementById("seconds").innerText = "0";
-  }
-}
-
-const timer = setInterval(countdown, 1000);
 
 </script>

@@ -13,7 +13,7 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script> 
-<script src="/static/scripts.js" defer></script>
+
   <style>
     html{
       scroll-behavior: smooth;
@@ -618,28 +618,6 @@
 
 
 <script>
-    // carousel for accomodation at index.html
-function carouselchange(num){
-    const elems=document.querySelectorAll("#carousel div")
-    console.log(elems)
-      for (let i=0;i<elems.length;i++){
-      elems[i].style.opacity='0'
-      }
-      elems[num].style.opacity='100%'
-
-  }
-
-  window.onload = (event) => {
-    i=0
-  setInterval(() => {
-    carouselchange(i)
-    i+=1;
-    if (i>2){
-      i=0
-    }
-  }, 5000);
-};
-
 
 
 // navbar of wysc.html
