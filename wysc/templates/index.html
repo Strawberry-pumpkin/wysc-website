@@ -482,16 +482,17 @@ world heritage site, is 1.5 hours drive in the opposite direction.
 
   <script>
     
-// navbar of wysc.html
+
+const navbar = document.getElementById('navbar');
+    // navbar of wysc.html
 window.addEventListener('scroll', () => {
-  const navbar = document.getElementById('navbar');
   if (window.scrollY > 0) {
   
-  navbar.classList.toggle('hidden')
+  navbar.classList.remove('hidden')
   
   } else {
   
-  navbar.classList.toggle('hidden')
+  navbar.classList.add('hidden')
   }
   });
   
