@@ -481,6 +481,24 @@ world heritage site, is 1.5 hours drive in the opposite direction.
   
 
   <script>
+    
+// navbar of wysc.html
+window.addEventListener('scroll', () => {
+  const navbar = document.getElementById('navbar');
+  if (window.scrollY > 0) {
+  
+  navbar.classList.replace('text-white','text-black')
+  navbar.classList.add('shadow-md')
+  navbar.classList.add('backdrop-blur-sm')
+  
+  } else {
+  
+  navbar.classList.replace('text-black','text-white')
+  navbar.classList.remove('shadow-md')
+  navbar.classList.add('backdrop-blur-sm')
+  }
+  });
+  
     // carousel for accomodation at index.html
 function carouselchange(num){
   const elems=document.querySelectorAll("#carousel div")
@@ -504,23 +522,6 @@ setInterval(() => {
 };
 
 
-
-// navbar of wysc.html
-window.addEventListener('scroll', () => {
-const navbar = document.getElementById('navbar');
-if (window.scrollY > 0) {
-
-navbar.classList.replace('text-white','text-black')
-navbar.classList.add('shadow-md')
-navbar.classList.add('backdrop-blur-sm')
-
-} else {
-
-navbar.classList.replace('text-black','text-white')
-navbar.classList.remove('shadow-md')
-navbar.classList.add('backdrop-blur-sm')
-}
-});
 
 // responsive navbar for both
 const menuBtn = document.getElementById('menuBtn');
