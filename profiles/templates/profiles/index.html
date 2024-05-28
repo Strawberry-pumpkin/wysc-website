@@ -1,3 +1,8 @@
+<style>
+    tr:nth-child(odd){
+        background-color: rgb(231, 125, 20))),.2);
+    }
+</style>
 {% extends "profiles/base.html" %}
 {% block content %}
     <div class="m5">
@@ -17,20 +22,20 @@
         <h4 class="mt-5 text-2xl font-bold text-center p-5">Upcoming tournaments</h4>
         <table class=' m-auto text-sm text-left rtl:text-right text-gray-500 p-5 bg-gray-150 shadow-xl rounded-lg'>
             <thead>
-                <tr>
-                    <th class='p-5 text-center'>Event</th>
-                    <th class='p-5 text-center'>Venue</th>
-                    <th class='p-5 text-center'>Date</th>
-                    <th class='p-5 text-center'>Status</th>
+                <tr >
+                    <th class='p-5 text-center border-r-2 border-b-2 '>Event</th>
+                    <th class='p-5 text-center border-r-2 border-b-2'>Venue</th>
+                    <th class='p-5 text-center  border-r-2 border-b-2'>Date</th>
+                    <th class='p-5 text-center border-r-2 border-b-2'>Status</th>
                 </tr>
             </thead>
             <tbody>
         {% for t in tournaments %}
             <tr>
-                <td class='p-5'>{{ t.name }}</td>
-                <td class='p-5'>{{ t.venue }}</td>
-                <td class='p-5'>{{ t.start_date }}</td>
-                <td class='p-5'>
+                <td class='p-5 border-r-2 border-b-2'>{{ t.name }}</td>
+                <td class='p-5 border-r-2 border-b-2'>{{ t.venue }}</td>
+                <td class='p-5 border-r-2 border-b-2'>{{ t.start_date }}</td>
+                <td class='p-5 border-r-2 border-b-2'>
                     <div class="col-2">
                     {% if t.registered %}
                         You are registered
