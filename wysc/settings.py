@@ -124,4 +124,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL='/profile/'
 
+CSRF_TRUSTED_ORIGINS = ['https://beta.scrabble.lk']
+
 from .settings_local import *
