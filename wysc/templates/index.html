@@ -438,7 +438,7 @@ world heritage site, is 1.5 hours drive in the opposite direction.
 
             <h3 class="text-lg font-bold text-gray-800 mb-2">Citrus Waskaduwa</h3>
             <p class="max-w-30 p-2 text-center">Accommodations are available at Citrus Waskaduwa at concessionary rates for all players taking part in the WYSC & SLIO</p>
-            <a target="_blank" href="https://www.citrusleisure.com/waskaduwa/" class="text-orange-500 hover:underline">Learn More</a>        <br><br>
+            <a target="_blank" href="https://www.citrusleisure.com/roombookings/" class="text-orange-500 hover:underline">Learn More</a>        <br><br>
         </div>
 
     </div>
@@ -512,6 +512,28 @@ menuBtn.addEventListener('click', () => {
       menuBtn.name = 'menu'
   }
 });
+// carousel for accomodation at index.html
+function carouselchange(num){
+  const elems=document.querySelectorAll("#carousel div")
+  console.log(elems)
+    for (let i=0;i<elems.length;i++){
+    elems[i].style.opacity='0'
+    }
+    elems[num].style.opacity='100%'
+
+}
+
+window.onload = (event) => {
+  i=0
+setInterval(() => {
+  carouselchange(i)
+  i+=1;
+  if (i>2){
+    i=0
+  }
+}, 5000);
+};
+
 
   </script>
 </body>
