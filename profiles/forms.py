@@ -47,7 +47,7 @@ class UserProfileForm(forms.Form):
     display_name = forms.CharField(
         max_length=20,
         widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': "Match your ratings list name. 20 characters max."}),
-        label='Name in ratings list',
+        label='Display name',
     )
 
     phone_regex = RegexValidator(
