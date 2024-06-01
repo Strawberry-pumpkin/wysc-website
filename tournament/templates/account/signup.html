@@ -18,7 +18,7 @@
         <br>
         <p>{% blocktrans %}Already have an account? Then please <a class="text-orange-400 underline" href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
         <br>
-        <form class="signup max-w-md m-auto shadow-md p-10 rounded-md gap-2" id="signup_form" method="post" action="{% url 'account_signup' %}">
+        <form class="signup max-w-lg m-auto shadow-md p-10 rounded-md gap-2" id="signup_form" method="post" action="{% url 'account_signup' %}">
           {% csrf_token %}
           
           {% for field in form %}
