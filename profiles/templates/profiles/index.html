@@ -39,7 +39,7 @@
                 <td class='p-5 border-r-2 border-b-2'>
                     <div class="">
                     {% if t.registered %}
-                        <p class="text-green-500">You are registered</p>
+                        <p class="text-green-500">You are registered, you will receive an email confirming your registration</p>
                         {% if t.passport_required and not t.registered.passport %}
                             <form method="post" enctype="multipart/form-data" class="file-upload-form"
                                 action="/profile/passport/">
