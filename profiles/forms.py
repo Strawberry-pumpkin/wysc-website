@@ -5,8 +5,8 @@ from tournament.models import Participant
 
 import pycountry
 
-# Generate a list of tuples for country choices
-COUNTRIES = [(country.alpha_2, country.name) for country in pycountry.countries]
+# Generate a sorted list of tuples for country choices
+COUNTRIES = sorted([(country.alpha_2, country.name) for country in pycountry.countries], key=lambda x: x[1])
 
 
 class PaymentForm(forms.Form):
