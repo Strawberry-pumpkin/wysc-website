@@ -10,7 +10,7 @@
   <link href="https://fonts.cdnfonts.com/css/ibm-plex-sans" rel="stylesheet">
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>      
-  <script src="/static/scripts.js" defer></script>
+
 
   <style>
     html{
@@ -40,12 +40,12 @@
         <div class="flex justify-between items-center py-4 lg:justify-start lg:space-x-10">
           <div class="flex justify-start lg:w-0 lg:flex-1">
             <img id='citrus' src="/static/images/wyclogo.png" class="w-6" onmouseover='document.getElementById("citrus").src="https://www.srilankascrabbleleague.lk/static/citrus.png"' onmouseleave='document.getElementById("citrus").src="/static/images/wyclogo.png"'>&nbsp;
-            <a href="#" class="text-gray-900 text-base font-medium hover:text-gray-600" style="color: #1e3653;">WYSC & SLIO <span class="text-orange-500">2024</span></a>&nbsp;
+            <a href="/" class="text-gray-900 text-base font-medium hover:text-gray-600" style="color: #1e3653;">WYSC & SLIO <span class="text-orange-500">2024</span></a>&nbsp;
           </div>
           <nav class="lg:block hidden space-x-10" id="menu">
             <a href="/accounts/signup/" class="text-base font-medium text-gray-900 hover:text-orange-500 block lg:inline-block">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Register</a>
             <a href="/wysc" class="text-base font-medium text-gray-900 hover:text-orange-500 block lg:inline-block">WYSC</a>
-            <a href="#" class="text-base font-medium text-gray-900 hover:text-orange-500 block lg:inline-block">SLIO</a>
+            <a href="/slio" class="text-base font-medium text-gray-900 hover:text-orange-500 block lg:inline-block">SLIO</a>
             
 
           </nav>
@@ -67,9 +67,9 @@
     </div>
     <h1 class="sm:text-4xl  text-3xl lg:text-5xl font-bold text-gray-800 mb-2 text-center">World Youth Scrabble Championship <br> 2024  <span class=" md:hidden"><br>&<br>Sri Lanka International Open 2024</span></h1>
     <p class="text-gray-600 mb-4 text-center">6-8 September <span class="md:hidden">& 13-15 September</span>, Citrus Waskaduwa,<br> Sri Lanka</p>
-    <a href="/wysc/" class="max-w-48 hidden md:block text-center text-black p-2 rounded-lg border-solid border-orange-500 border-2 hover:bg-orange-500 hover:text-white font-none">Visit tournament page</a>
-    <div class="flex justify-center md:hidden gap-3"><a href="/wysc/" class="max-w-48 text-center text-black p-2 px-5 rounded-lg border-solid border-orange-500 border-2 hover:bg-orange-500 hover:text-white font-none">WYSC</a>
-      <a href="#" class="max-w-48 text-center text-black p-2 px-5 rounded-lg border-solid border-orange-500 border-2 hover:bg-orange-500 hover:text-white font-none">SLIO</a>  </div>
+    <a href="/wysc" class="max-w-48 hidden md:block text-center text-black p-2 rounded-lg border-solid border-orange-500 border-2 hover:bg-orange-500 hover:text-white font-none">Visit tournament page</a>
+    <div class="flex justify-center md:hidden gap-3"><a href="/wysc" class="max-w-48 text-center text-black p-2 px-5 rounded-lg border-solid border-orange-500 border-2 hover:bg-orange-500 hover:text-white font-none">WYSC</a>
+      <a href="/slio" class="max-w-48 text-center text-black p-2 px-5 rounded-lg border-solid border-orange-500 border-2 hover:bg-orange-500 hover:text-white font-none">SLIO</a>  </div>
     <div class="flex justify-center  py-4 md:hidden">
 
       <a
@@ -124,7 +124,7 @@
       <img src="/static/images/sliologo.png" alt="Logo" class="mb-4 max-w-60 -z-50">
       <h1 class="md:text-4xl lg:text-5xl font-bold text-gray-800 mb-2 text-center">Sri Lanka <br>International Open<br>2024</h1>
       <p class="text-gray-600 mb-4 text-center">13-15 September, Citrus Waskaduwa,<br> Sri Lanka</p>
-      <a href="#" class="max-w-48 text-center text-black p-2 rounded-lg border-solid border-orange-500 border-2 hover:bg-orange-500 hover:text-white font-none">Visit tournament page</a>
+      <a href="/slio" class="max-w-48 text-center text-black p-2 rounded-lg border-solid border-orange-500 border-2 hover:bg-orange-500 hover:text-white font-none">Visit tournament page</a>
 
 
   </div>
@@ -232,15 +232,8 @@
         <h1 class="text-3xl font-bold text-gray-800 dark:text-white" style="color: #1e3653;">WYSC Schedule</h1>
 
       </div>
-      <div class="grid md:grid-cols-2 grid-cols-1 gap-4">
-        <div class="grid grid-cols-1 gap-4">
-      <div class="p-4 bg-gray-200 rounded-lg shadow-lg hover:shadow-md">
-        <div class="bg-gray-200 text-black text-center p-4 rounded-md cursor-pointer" onclick="viewtable(this)">
-           <p class="">Check In & Warmup | <b>05th September</b></p>
-        </div>
-
-    </div>
-
+      <div class="grid md:grid-cols-3 grid-cols-1 gap-4">
+      
     <div class="p-4 bg-gray-200 rounded-lg shadow-lg hover:shadow-md">
       <div class="bg-gray-200 text-black text-center p-4 rounded-md cursor-pointer" onclick="viewtable(this)">
          <p class="">Day 01 | <b>06th September</b></p>
@@ -250,15 +243,12 @@
       </div>
 
 
-  </div>
-  <div class="grid grid-cols-1 gap-4">
     <div class="p-4 bg-gray-200 rounded-lg shadow-lg hover:shadow-md">
       <div class="bg-gray-200 text-black text-center p-4 rounded-md cursor-pointer" onclick="viewtable(this)">
          <p class="">Day 02 | <b>07th September</b></p>
       </div>
 
-  </div>
-
+    </div>
   <div class="p-4 bg-gray-200 rounded-lg shadow-lg hover:shadow-md">
     <div class="bg-gray-200 text-black text-center p-4 rounded-md cursor-pointer" onclick="viewtable(this)">
        <p class="">Day 03 | <b>08th September</b></p>
@@ -438,14 +428,14 @@ world heritage site, is 1.5 hours drive in the opposite direction.
 
             <h3 class="text-lg font-bold text-gray-800 mb-2">Citrus Waskaduwa</h3>
             <p class="max-w-30 p-2 text-center">Accommodations are available at Citrus Waskaduwa at concessionary rates for all players taking part in the WYSC & SLIO</p>
-            <a target="_blank" href="https://www.citrusleisure.com/waskaduwa/" class="text-orange-500 hover:underline">Learn More</a>        <br><br>
+            <a target="_blank" href="https://www.citrusleisure.com/roombookings/" class="text-orange-500 hover:underline">Learn More</a>        <br><br>
         </div>
 
     </div>
 </div>
 <div class="grid grid-col-1 md:grid-cols-3 gap-3 p-5 max-w-7xl m-auto">
   <a href="/wysc"><img src="/static/images/1.png" class="xl:max-w-md w-full rounded-md " alt=""  ></a>
-  <a href=""><img src="/static/images/7.png" class="xl:max-w-md w-full rounded-md" alt=""   ></a>
+  <a href="/slio"><img src="/static/images/7.png" class="xl:max-w-md w-full rounded-md" alt=""   ></a>
   <img src="/static/images/11.png" class="xl:max-w-md w-full rounded-md" alt=""   >
 </div>
 <img src="" alt="">
@@ -478,37 +468,63 @@ world heritage site, is 1.5 hours drive in the opposite direction.
   <button id="scrollToTop" class="fixed bottom-4 right-4 bg-orange-500 text-white p-2 rounded-full shadow-lg hover:bg-orange-600 z-50 hidden">
     ↑
   </button>
-  <script>
-    // Show navbar on scroll
-    window.addEventListener('scroll', () => {
-      const navbar = document.getElementById('navbar');
-      const scrollToTop = document.getElementById('scrollToTop');
-      if (window.scrollY > 100) {
-        navbar.classList.remove('hidden');
-        scrollToTop.classList.remove('hidden');
-      } else {
-        navbar.classList.add('hidden');
-        scrollToTop.classList.add('hidden');
-      }
-    });
+  
 
-    // Scroll to top functionality
-    document.getElementById('scrollToTop').addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+  <script>
+    
+
+const navbar = document.getElementById('navbar');
+    // navbar of wysc.html
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 0) {
+  
+  navbar.classList.remove('hidden')
+  
+  } else {
+  
+  navbar.classList.add('hidden')
+  }
+  });
+  
+
+
+
+// responsive navbar for both
+const menuBtn = document.getElementById('menuBtn');
+const menu = document.getElementById('menu');
+
+menuBtn.addEventListener('click', () => {
+  menu.classList.toggle('hidden');
+  if (menuBtn.name=='menu'){
+      menuBtn.name='close'
+  }
+  else{
+      menuBtn.name = 'menu'
+  }
+});
+// carousel for accomodation at index.html
+function carouselchange(num){
+  const elems=document.querySelectorAll("#carousel div")
+  console.log(elems)
+    for (let i=0;i<elems.length;i++){
+    elems[i].style.opacity='0'
+    }
+    elems[num].style.opacity='100%'
+
+}
+
+window.onload = (event) => {
+  i=0
+setInterval(() => {
+  carouselchange(i)
+  i+=1;
+  if (i>2){
+    i=0
+  }
+}, 5000);
+};
+
 
   </script>
-    <script>
-      // Navbar scroll event
-      window.addEventListener('scroll', () => {
-        const navbar = document.getElementById('navbar');
-        if (window.scrollY > 0) {
-          navbar.classList.remove('hidden');
-        } else {
-          navbar.classList.add('hidden');
-        }
-      });
-    </script>
-
 </body>
 </html>
