@@ -1,23 +1,79 @@
 {% extends "profiles/base.html" %}
 {% block content %}
-    <div>
+    <div class='p-5 m-auto'>
         {% if participants.exists %}
-            <p>Currently you are registered for the following tournaments:</p>
+            <p class='text-center p-5'>Currently you are registered for the following tournaments:</p>
             {% for p in participants %}
-                <div class="mt-5 p-5 bg-white rounded-lg shadow-md">
-                    <div class="border-b pb-3 mb-3"><h4 class="text-lg font-semibold">{{p.tournament.name}}</h4></div>
+
+        <div class='overflow-x-auto p-2'>
+            <table class=" m-auto text-sm text-left rtl:text-right text-gray-500 p-5 bg-gray-150 shadow-xl rounded-md "      >
+                <thead class="text-xs text-gray-700 uppercase bg-orange-100">
+                    <tr>
+                        
+                        <th scope="col" class="px-6 py-3 text-center border-r-2">
+                            Event 
+                        </th>
+                       
+                        <th scope="col" class="px-6 py-3 text-center border-r-2">
+                            Start Date
+                        </th>
+                        
+                        <th scope="col" class="px-6 py-3 text-center border-r-2">
+                            Venue
+                        </th>
+                        <th scope="col" class="px-6 py-3 text-center border-r-2">
+                            Registered As
+                        </th>
+                        
+                        <th scope="col" class="px-6 py-3 text-center border-r-2">
+                            Payment
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="bg-white border-b">
+                        <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap text-center border-r-2 border-t-2">
+                            {{p.tournament.name}}
+                        </td>
+                        <td  class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap text-center border-r-2 border-t-2">
+                            {{p.tournament.start_date}}
+                            
+                        </td>
+                       
+                        <td class="px-6 py-4 text-center font-medium whitespace-nowrap text-gray-900 border-r-2 border-t-2">
+                            {{p.tournament.venue}}
+                        </td>
+                        <td class="px-6 py-4 text-center font-medium whitespace-nowrap text-gray-900 border-r-2 border-t-2">
+                            {{p.name}}
+                        </td>
+                        <td class="px-6 py-4 text-center font-medium whitespace-nowrap text-gray-900 border-r-2 border-t-2">
+                            {% if p.tournament.advance_payment %}
+                                    {% if p.approval == 'V' %}
+                                        <strong>{{ p.get_approval_display }}</strong>
+                                    {% elif p.approval == 'P' %}
+                                        {{ p.get_approval_display }}<br/>
+                                        {{ p.payment.name }}
+                                    {% else %}
+                                        {{ p.get_approval_display }}
+                                    {% endif %}    
+                                {% else %}                                
+                                    Tournament entry fees to be paid at the venue
+                                {% endif %}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+
+<!-- TABLE LAYOUT ENDS HERE -->
+
+        
+                    
                     <div>
                         <div class="grid grid-cols-12 gap-2">
-                            <div class="col-span-2 font-medium">Venue:</div>
-                            <div class="col-span-10">{{p.tournament.venue}}</div>
 
-                            <div class="col-span-2 font-medium">Start Date:</div>
-                            <div class="col-span-10">{{p.tournament.start_date}}</div>
-
-                            <div class="col-span-2 font-medium">Registered as:</div>
-                            <div class="col-span-10">{{ p.name }}</div>
-
-                            <div class="col-span-2 font-medium">Payment:</div>
                             <div class="col-span-10">
                                 {% if p.tournament.advance_payment %}
                                     {% if p.approval == 'V' %}
