@@ -98,7 +98,7 @@ class ParticipantAdmin(admin.ModelAdmin):
     def country(self, obj):
         if obj.user and obj.user.profile:
             country = obj.user.profile.country
-            return dob
+            return country
         return ''
 
     list_display = ['pk', 'tournament','name','rating','seed','round_wins','game_wins','approval','gender','dob', 'country']
