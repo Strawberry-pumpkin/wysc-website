@@ -61,7 +61,7 @@ class PaymentAdmin(admin.ModelAdmin):
     a different staff member who is not familiar with the Participant model.
     for example an accounting type can take over verification of payments"""
     
-    list_display = ['tournament', 'name', 'payment', 'approval', 'approved_by']
+    list_display = ['tournament', 'name', 'payment','passport', 'approval', 'approved_by']
     search_fields = ['tournament__name', 'name']
     exclude = ['approved_by']
     list_filter = ('approval',)
@@ -76,6 +76,15 @@ class PaymentAdmin(admin.ModelAdmin):
     payment.allow_tags = True
     payment.short_description = 'File'
 
+    def passport(self, obj):
+        """Display the passport image as a link"""
+        if obj and obj.file_field:
+            return format_html('<a href="{}" target="_blank">Download</a>', obj.file_field.url)
+        return "No File"
+
+    passport.allow_tags = True
+    passport.short_description = 'File'
+    
     def save_model(self, request, obj, form, change):
         obj.approved_by = request.user
         obj.approved_at = timezone.now()
