@@ -108,7 +108,7 @@ class ParticipantAdmin(admin.ModelAdmin):
             return country
         return ''
 
-    list_display = ['pk', 'tournament','name','rating','seed','round_wins','game_wins','approval','gender','dob', 'country']
+    list_display = ['pk', 'tournament','name', 'country', 'rating','seed','round_wins','game_wins','approval','gender','dob']
     search_fields = ['tournament__name', 'name']
     raw_id_fields = ['tournament','user']
 
