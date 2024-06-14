@@ -37,8 +37,8 @@ class TDAdmin(admin.ModelAdmin):
     list_display = ['tournament', 'user']
 
 class PaymentFilter(admin.SimpleListFilter):
-    title = 'payment status'
-    parameter_name = 'payment'
+    title = 'verification status'
+    parameter_name = 'passport'
 
     def lookups(self, request, model_admin):
         return [
@@ -60,21 +60,17 @@ class PaymentAdmin(admin.ModelAdmin):
     This admin class is here because payment moderation can be delegated to
     a different staff member who is not familiar with the Participant model.
     for example an accounting type can take over verification of payments"""
-    
-    list_display = ['tournament', 'name', 'payment','passport', 'approval', 'approved_by']
+    list_display = ['tournament', 'name', 'country', 'passport', 'approval', 'approved_by']
     search_fields = ['tournament__name', 'name']
     exclude = ['approved_by']
     list_filter = ('approval',)
     list_editable = ['approval',]
-    
-    def payment(self, obj):
-        """Display the payment image as a link"""
-        if obj and obj.file_field:
-            return format_html('<a href="{}" target="_blank">Download</a>', obj.file_field.url)
-        return "No File"
 
-    payment.allow_tags = True
-    payment.short_description = 'File'
+    def country(self, obj):
+        if obj.user and obj.user.profile:
+            country = obj.user.profile.country
+            return country
+        return ''
 
     def passport(self, obj):
         """Display the passport image as a link"""
@@ -90,7 +86,6 @@ class PaymentAdmin(admin.ModelAdmin):
         obj.approved_at = timezone.now()
         super().save_model(request, obj, form, change)
 
-           
 
 class ParticipantAdmin(admin.ModelAdmin):
 
@@ -105,7 +100,13 @@ class ParticipantAdmin(admin.ModelAdmin):
             return dob
         return ''
 
-    list_display = ['pk', 'tournament','name','rating','seed','round_wins','game_wins','approval','gender','dob']
+    def country(self, obj):
+        if obj.user and obj.user.profile:
+            country = obj.user.profile.country
+            return country
+        return ''
+
+    list_display = ['pk', 'tournament','name', 'country', 'rating','seed','round_wins','game_wins','approval','gender','dob']
     search_fields = ['tournament__name', 'name']
     raw_id_fields = ['tournament','user']
 

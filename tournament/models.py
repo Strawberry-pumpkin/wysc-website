@@ -251,7 +251,7 @@ class Participant(models.Model):
     ''' A player or a team in a tournament'''
     APPROVAL_CHOICES = [
         ('V', 'Verified'), ('R','Verficiation Failed'), 
-        ('P', 'Pending Verification'), ('U', 'Unpaid')
+        ('P', 'Pending Verification'), ('U', 'Not Uploaded')
     ]
 
     name = models.CharField(max_length=128)
