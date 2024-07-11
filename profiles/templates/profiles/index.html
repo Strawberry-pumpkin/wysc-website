@@ -28,6 +28,7 @@
                     <th class='p-5 text-center border-r-2 border-b-2 '>Event</th>
                     <th class='p-5 text-center border-r-2 border-b-2'>Venue</th>
                     <th class='p-5 text-center  border-r-2 border-b-2'>Date</th>
+                    <th class='p-5 text-center  border-r-2 border-b-2'>Entry Fee</th>
                     <th class='p-5 text-center border-r-2 border-b-2'>Status</th>
                 </tr>
             </thead>
@@ -37,6 +38,7 @@
                 <td class='p-5 border-r-2 border-b-2 font-bold text-center'>{{ t.name }}</td>
                 <td class='p-5 border-r-2 border-b-2'>{{ t.venue }}</td>
                 <td class='p-5 border-r-2 border-b-2'>{{ t.start_date }}</td>
+                <td class='p-5 border-r-2 border-b-2'></td>
                 <td class='p-5 border-r-2 border-b-2'>
                     <div class="">
                     {% if t.registered %}
@@ -125,5 +127,4 @@
           
     </script>
 {% endblock %}
-
 
