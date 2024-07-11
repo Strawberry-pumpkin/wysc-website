@@ -53,7 +53,8 @@ def index(request):
 
         tournaments = Tournament.objects.filter(
             Q(start_date__gte=timezone.now()) & Q(registration_open=True)
-        )
+        ).order_by('pk')
+        
         for t in tournaments:
             p = t.participants.filter(user=request.user)
             if p.exists():

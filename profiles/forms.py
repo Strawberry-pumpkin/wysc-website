@@ -5,8 +5,8 @@ from tournament.models import Participant
 
 import pycountry
 
-# Generate a list of tuples for country choices
-COUNTRIES = [(country.alpha_2, country.name) for country in pycountry.countries]
+# Generate a sorted list of tuples for country choices
+COUNTRIES = sorted([(country.alpha_2, country.name) for country in pycountry.countries], key=lambda x: x[1])
 
 
 class PaymentForm(forms.Form):
@@ -47,7 +47,7 @@ class UserProfileForm(forms.Form):
     display_name = forms.CharField(
         max_length=20,
         widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': "Match your ratings list name. 20 characters max."}),
-        label='Name in ratings list',
+        label='Display name',
     )
 
     phone_regex = RegexValidator(

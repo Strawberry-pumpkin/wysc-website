@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.db.models import Case, When, Value, BooleanField, Q
 from django.utils import timezone
+from django.core.mail import EmailMultiAlternatives
+from django.template.loader import render_to_string
 
 from tournament.models import Tournament, Participant
 
@@ -23,29 +25,18 @@ def redirect_view(request):
 def register(request):
     if request.user.is_authenticated and request.method == "POST":
         t = Tournament.objects.get(pk=request.POST.get('tournament'))
-        if "Junior" in t.name:
-            junior = Tournament.objects.filter(name__icontains="Junior")
-            tournaments = Participant.objects.filter(
-                Q(user=request.user) &  Q(tournament__in=junior) &
-                Q(tournament__start_date__gte=timezone.now()) &
-                Q(tournament__registration_open=True)
-            )
+        Participant.objects.create(
+            user=request.user, tournament=t,name=request.user.profile.preferred_name,
+        )
 
-            if tournaments.exists():
-                #
-                # this player has registered for a different zonal event. Let's delete that
-                #                     
-                tournaments.delete()
-            
-            Participant.objects.create(
-                user=request.user, tournament=t,name=request.user.profile.preferred_name,
-            )
-            return redirect('/profile/')
-        else:
-            Participant.objects.create(
-                user=request.user, tournament=t,name=request.user.profile.preferred_name,
-            )
-            return redirect('/profile/')
+        message = EmailMultiAlternatives(subject=f"{t.name}",
+                                         from_email='Scrabble Federation of Sri Lanka <wysc2024@scrabble.lk>',
+                                         to=[request.user.email])
+        html = render_to_string('register-confirm-email.html', {'name': request.user.profile.full_name, 'tournament': t.name})
+        message.attach_alternative(html, "text/html")
+        message.send()
+        
+        return redirect('/profile/')
             
     return render(request, 'register.html')
     
