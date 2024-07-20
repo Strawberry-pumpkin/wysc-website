@@ -1,3 +1,7 @@
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script> 
+
+
 <script src="https://cdn.tailwindcss.com"></script>
 {% extends "profiles/base.html" %}
 {% block content %}
@@ -42,27 +46,32 @@
                                         of Commercial Bank.</p>
         
                                     <form method="post" enctype="multipart/form-data" class="file-upload-form">
+
+                                        <br>
                                         {{ p.form.errors }}
                                         {% csrf_token %}
-                                        <label for="id_payment" class="block font-medium text-sm text-gray-700">Payment details (deposit slip or transfer confirmation):</label>
+                                        <label for="id_payment" class="block font-medium text-sm text-gray-700"> Payment details (deposit slip or transfer confirmation):</label>
 
 
 
                                         <!-- <input type="file" name="payment" accept="image/*, .pdf" id="id_payment-{{p.tournament.id}}" 
                                             class="form-input mt-1 block w-full"> -->
 
-                                            <div class="upholder rounded-lg bg-gray-200 backdrop-blur-lg bg-gray-100/10 w-48 h-48">
+                                            <div class="upholder rounded-lg bg-gray-200 backdrop-blur-lg bg-gray-100/10 w-48 h-48 sm:mx-0 mx-auto">
 
-                                                <div class="uploader bg-cover m-2 rounded-lg bg-gray-150" onclick="document.getElementById('upload').click()">
-                                                  <ion-icon name="cloud-upload" class="text-center p-36 py-24 pb-0 text-3xl text-orange-500"></ion-icon>
+                                                <div class="uploader bg-cover  rounded-lg bg-gray-150 w-full h-full" onclick="document.getElementById('upload').click()">
+                                                  <ion-icon name="cloud-upload" class="text-center flex justify-center w-full pt-16 pb-0 text-3xl text-blue-500"></ion-icon>
                                                   <input id="upload"  type="file" name="payment" accept="image/*, .pdf" id="id_payment-{{p.tournament.id}}" class="form-input mt-1 block w-full hidden">
-                                                  <p id="prev_name" class="text-center pt-20 pb-2 text-orange-500 font-bold "></p>
+                                                  <p id="prev_name" class="text-center pt-0 pb-2 text-blue-500 font-bold text-sm ">Click to Upload</p>
+
                                                 </div>
 
                                                 <div alt="" id="preview" class="rounded-lg"></div>
                                             </div>
 
-                                        <button type="submit" class="mt-2 btn btn-primary bg-blue-500 text-white py-2 px-4 upload-button rounded-md disabled:opacity-50" disabled
+
+                                        <button type="submit" class="mt-2 btn btn-primary bg-blue-500 text-white py-2 px-4 upload-button rounded-md disabled:opacity-50 flex justify-center sm:mx-0 mx-auto" disabled
+
                                             id="submitButton-{{p.tournament.id}}">Upload</button>
                                         {{ p.form.tournament }}
                                     </form>
@@ -105,6 +114,10 @@
                 const [file] = inp.files;
                 if (file) {
                 preview.parentNode.style.backgroundImage = `url(${URL.createObjectURL(file)})`;
+
+                preview.parentNode.style.backgroundSize = 'cover';
+            prev_nm.parentNode.style.backdropFilter = 'blur(1px)'
+
                   prev_nm.innerHTML = file.name;
                   
                 }
