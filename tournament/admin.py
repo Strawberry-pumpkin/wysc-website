@@ -60,7 +60,7 @@ class PaymentAdmin(admin.ModelAdmin):
     This admin class is here because payment moderation can be delegated to
     a different staff member who is not familiar with the Participant model.
     for example an accounting type can take over verification of payments"""
-    list_display = ['tournament', 'name', 'country', 'passport', 'approval', 'approved_by']
+    list_display = ['tournament', 'name', 'country', 'passport', 'payment', 'approval', 'approved_by']
     search_fields = ['tournament__name', 'name']
     exclude = ['approved_by']
     list_filter = ('approval',)
