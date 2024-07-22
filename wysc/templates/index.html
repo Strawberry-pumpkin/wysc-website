@@ -46,6 +46,7 @@
             <a href="/accounts/signup/" class="text-base font-medium text-gray-900 hover:text-orange-500 block lg:inline-block">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Register</a>
             <a href="/wysc" class="text-base font-medium text-gray-900 hover:text-orange-500 block lg:inline-block">WYSC</a>
             <a href="/slio" class="text-base font-medium text-gray-900 hover:text-orange-500 block lg:inline-block">SLIO</a>
+            <a href="#faq" class="text-base font-medium text-gray-900 hover:text-orange-500 block lg:inline-block">FAQ</a>
             
 
           </nav>
@@ -145,7 +146,7 @@
   </div>
 
 
-  <div id="about" class="py-12 bg-gray-300 dark:bg-gray-100">
+  <div id="about" class="py-12">
     <div class="max-w-5xl mx-auto px-4">
       <div class="text-center mb-12">
         <h1 class="text-3xl font-bold text-gray-800 dark:text-white" style="color: #1e3653;">About Us</h1>
@@ -274,7 +275,6 @@
 </div>
 
       </div>
-    </div>
     <div class="max-w-6xl mx-auto px-4 py-10">
       <h2 class="text-center text-2xl py-10">WYSC Side Event</h2>
       <div class="grid md:grid-cols-3 grid-cols-1 gap-4 ">
@@ -372,7 +372,7 @@ world heritage site, is 1.5 hours drive in the opposite direction.
     </div>
   </div>
 
-  <div id="transportation" class="py-12 bg-gray-300 dark:bg-gray-150"  >
+  <div id="transportation" class="py-12 bg-gray-300"  >
     <div class=" max-w-6xl mx-auto px-4" >
       <div class="text-center mb-12">
         <h2 class="text-3xl font-bold text-gray-800 dark:text-white" style="color: #1e3653;" style="color: #1e3653;">Transportation</h2>
@@ -384,9 +384,10 @@ world heritage site, is 1.5 hours drive in the opposite direction.
           </div>
           <div class="">
             <h3 class="text-2xl font-semibold text-center mb-3">Airport Pickups</h3>
-            <p class="text-gray-800  text-justify">Airport Pickups can be arranged by our travel partner. Please refer to the document below
+            <p class="text-gray-800  text-justify">Airport Pickups can be arranged by our travel partner. Please refer to the documents below
               for contact details.
             </p>
+
             
           </div>
         </div>
@@ -402,9 +403,9 @@ world heritage site, is 1.5 hours drive in the opposite direction.
       </div>
       
 <div class=" flex justify-center gap-2 p-4">
-    <button class="border-2 rounded-md border-orange-500 hover:bg-orange-500 py-1 px-4 hover:text-white"><a href="/static/tp.pdf" target="_blank">Tour Packages</button>
-    <button class="border-2 rounded-md border-orange-500 hover:bg-orange-500 py-1 px-4 hover:text-white"><a href="/static/at.pdf" target="_blank">Airport Transfers</button>
-    <button class="border-2 rounded-md border-orange-500 hover:bg-orange-500 py-1 px-4 hover:text-white"><a href="/static/de.pdf" target="_blank">Day Excurcions</button>
+    <button class="border-2 rounded-md border-orange-500 hover:bg-orange-500 py-1 px-4 hover:text-white"><a href="/static/tp.pdf" target="_blank">Tour Packages</a></button>
+    <button class="border-2 rounded-md border-orange-500 hover:bg-orange-500 py-1 px-4 hover:text-white"><a href="/static/at.pdf" target="_blank">Airport Transfers</a></button>
+    <button class="border-2 rounded-md border-orange-500 hover:bg-orange-500 py-1 px-4 hover:text-white"><a href="/static/de.pdf" target="_blank">Day Excursions</a></button>
     
 </div>
     </div>
@@ -455,10 +456,154 @@ world heritage site, is 1.5 hours drive in the opposite direction.
 
     </div>
 </div>
+
+<div class="faq p-4 bg-gray-300" id="faq">
+    
+    
+
+<div class="max-w-2xl mx-auto p-4">
+  <h2 class="text-2xl font-bold text-center mb-2 pb-5">Frequently Asked Questions</h2>
+  
+  
+  <div class="space-y-4">
+    <div class="border rounded-lg overflow-hidden">
+      <button class="w-full text-left p-4 bg-gray-200 text-card focus:outline-none flex w-full justify-between "  onclick="toggleFaq(0)">How can I register for the Tournaments? <ion-icon name="arrow-down" class="pt-1" id="bt0"></ion-icon></button>
+      <div class="p-4 hidden bg-gray-100" id="faq-0">
+        <p class="text-muted-foreground">You can enroll yourself in the tournaments by creating a player account. <a href="#" class="hover:underline text-orange-500" >Click Here</a> to create your profile</p>
+      </div>
+    </div>
+    <div class="border rounded-lg overflow-hidden">
+        <button class="w-full text-left p-4 bg-gray-200 text-card focus:outline-none flex w-full justify-between "  onclick="toggleFaq(1)">Are there any age restrictions?  <ion-icon name="arrow-down" class="pt-1" id="bt1"></ion-icon></button>
+      <div class="p-4 hidden bg-gray-100" id="faq-1">
+        <p class="text-muted-foreground">
+          While the SLIO and WYSC side event are open to players of all age, the World Youth Scrabble Championship is only for those born  on or after the <b>01st of January 2007</b>
+        </p>
+      </div>
+    </div>
+
+    <div class="border rounded-lg overflow-hidden">
+        <button class="w-full text-left p-4 bg-gray-200 text-card focus:outline-none flex w-full justify-between "  onclick="toggleFaq(2)">What is the entry Fee? <ion-icon name="arrow-down" class="pt-1" id="bt2"></ion-icon></button>
+      <div class="p-4 hidden bg-gray-100" id="faq-2">
+        <p class="text-muted-foreground">
+            
+
+            <table class="max-w-5xl m-auto text-sm text-left rtl:text-right text-gray-500 md:px-5 px-0p-5 bg-gray-150 shadow-xl rounded-md "   >
+                <thead class="text-xs text-gray-700 uppercase bg-orange-100">
+                    <tr>
+                        
+                        <th scope="col" class="px-6 py-3 text-center border-r-2">
+                            Tournament 
+                        </th>
+                       
+                        <th scope="col" class="px-6 py-3 text-center border-r-2">
+                            Registration Fee 
+                        </th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b">
+                        
+                        <td  class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                            
+                            <p class="">WYSC ( Quota ) </p>
+                        </td>
+                       
+                        <td class="px-6 py-4 text-center font-extrabold">
+                            Free of Charge
+                        </td>
+                        
+                    </tr>
+                    <tr class=" border-b">
+                        
+                        <td  class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                            
+                            <p class="">WYSC (NON-QUOTA)</p>
+                        </td>
+                       
+                        <td class="px-6 py-4 text-center font-extrabold">
+                            US $100
+                        </td>
+                        
+                    </tr>
+                    <tr class=" border-b">
+                        
+                        <td  class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                            
+                            <p class="">WYSC Side Event</p>
+                        </td>
+                       
+                        <td class="px-6 py-4 text-center font-extrabold">
+                            US $50
+                        </td>
+                        
+                    </tr><tr class=" border-b">
+                        
+                        <td  class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                            
+                            <p class="">SLIO (Local Players)</p>
+                        </td>
+                       
+                        <td class="px-6 py-4 text-center font-extrabold">
+                            US $50
+                        </td>
+                        
+                    </tr><tr class=" border-b">
+                        
+                        <td  class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                            
+                            <p class="">SLIO (International Players)</p>
+                        </td>
+                       
+                        <td class="px-6 py-4 text-center font-extrabold">
+                            US $100
+                        </td>
+                        
+                    </tr>
+                </tbody>
+            </table>
+
+
+        </p>
+      </div>
+    </div>
+
+    <div class="border rounded-lg overflow-hidden">
+        <button class="w-full text-left p-4 bg-gray-200 text-card focus:outline-none flex w-full justify-between "  onclick="toggleFaq(3)">Will transport be provided from the airport to the venue? <ion-icon name="arrow-down" class="pt-1" id="bt3"></ion-icon></button>
+      <div class="p-4 hidden bg-gray-100" id="faq-3">
+        <p class="text-muted-foreground">Yes, our travel partners provide several options for transport. Please refer to the documents for more details
+
+          
+<div class=" sm:flex justify-center gap-2 p-4">
+  <button class="border-2 rounded-md border-orange-500 hover:bg-orange-500 py-1 px-4 hover:text-white"><a href="/static/tp.pdf" target="_blank">Tour Packages</a></button>
+  <button class="border-2 rounded-md border-orange-500 hover:bg-orange-500 py-1 px-4 hover:text-white"><a href="/static/at.pdf" target="_blank">Airport Transfers</a></button>
+  <button class="border-2 rounded-md border-orange-500 hover:bg-orange-500 py-1 px-4 hover:text-white"><a href="/static/de.pdf" target="_blank">Day Excursions</a></button>
+  
+</div>
+        </p>
+      </div>
+    </div>
+
+    
+    <div class="border rounded-lg overflow-hidden">
+      <button class="w-full text-left p-4 bg-gray-200 text-card focus:outline-none flex w-full justify-between "  onclick="toggleFaq(4)">How do I withdraw my registration if I accidentally registered for the wrong tournament?  <ion-icon name="arrow-down" class="pt-1" id="bt4"></ion-icon></button>
+    <div class="p-4 hidden bg-gray-100" id="faq-4">
+      <p class="text-muted-foreground">
+        You can send an email to <a href="mailto:wysc2024@scrabble.lk" class="hover:underline text-orange-500">wysc2024@scrabble.lk</a> mentioning the name you used to register and which tournament you would like to be removed from. Our team will handle it from there.</b>
+      </p>
+    </div>
+  </div>
+
+
+
+  </div>
+</div>
+
+</div>
 <div class="grid grid-col-1 md:grid-cols-3 gap-3 p-5 max-w-7xl m-auto">
   <a href="/wysc"><img src="/static/images/1.png" class="xl:max-w-md w-full rounded-md " alt=""  ></a>
   <a href="/slio"><img src="/static/images/7.png" class="xl:max-w-md w-full rounded-md" alt=""   ></a>
-  <img src="/static/images/11.png" href="/wysc#side" class="xl:max-w-md w-full rounded-md" alt=""   >
+  <a href="/wysc#side" ><img src="/static/images/11.png"  class="xl:max-w-md w-full rounded-md" alt=""   ></a>
 </div>
 <img src="" alt="">
   <footer class="bg-gray-300 text-black  text-center py-4">
@@ -554,5 +699,24 @@ setInterval(() => {
 
 
   </script>
+  <script>
+    function toggleFaq(index) {
+      const faq = document.getElementById(`faq-${index}`);
+      const faqbut = document.getElementById(`bt${index}`)
+      // b1,b2,b3.. is for carousel // 
+      //bt0,bt1,bt2... is for faq//
+
+      if (faqbut.name == 'arrow-down'){
+        faqbut.name = 'arrow-up'
+      }
+      else{
+        faqbut.name = 'arrow-down'
+      }
+      faq.classList.toggle('hidden');
+      faq.classList.toggle('block');
+    }
+  </script>
+  
+  
 </body>
 </html>

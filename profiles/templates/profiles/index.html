@@ -91,7 +91,7 @@
                             <form method="POST" action="/register/">
                                 {% csrf_token %}
                                 <input type="hidden" name="tournament" value="{{t.id}}" />
-                                <input type="submit" name="register" value="register" class="border-2 border-orange-500 px-5 py-1 text-center rounded-md m-auto block hover:bg-orange-500 hover:text-white"/>
+                                <input type="submit" name="register" value="register" class="border-2 border-orange-500 px-5 py-1 text-center rounded-md m-auto block hover:bg-orange-500 hover:text-white w-fit mt-4"/>
                             </form>
                         {% endif %}
                     {% endif %}
@@ -136,4 +136,3 @@
           
     </script>
 {% endblock %}
-
