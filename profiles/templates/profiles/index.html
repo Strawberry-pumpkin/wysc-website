@@ -81,7 +81,7 @@
                                     id="submitButton-{{p.tournament.id}}">Submit</button>
                                 <input type="hidden" name="tournament" id="id_tournament" value="{{t.id}}">
                             </form>
-                        {% elif t.advance_payment_required and not t.registered.payment %}
+                        {% elif t.slug == 'slio' and not t.registered.payment %}
                             <a href="/profile/payment/" class="border-2 border-orange-500 px-5 py-1 text-center rounded-md m-auto block hover:bg-orange-500 hover:text-white">make payment</a>
                         {% endif %}
                     {% else %}
