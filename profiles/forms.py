@@ -11,7 +11,7 @@ COUNTRIES = sorted([(country.alpha_2, country.name) for country in pycountry.cou
 
 class PaymentForm(forms.Form):
     tournament = forms.IntegerField(widget=forms.HiddenInput())
-    payment = forms.FileField(required=False)
+    payment = forms.FileField(required=True)
 
 
 class PassportForm(forms.Form):
