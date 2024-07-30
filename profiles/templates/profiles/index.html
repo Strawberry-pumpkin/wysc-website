@@ -69,25 +69,20 @@
                                     </div>
                                     <div alt="" id="preview" class="rounded-lg"></div>
                                   </div>
-
-
-
-
-
-
-
                                 
                                 <button type="submit" class="upload-button mt-2 disabled:bg-gray-200 bg-orange-500 text-white py-2 px-4 rounded-md block m-auto" disabled
                                     id="submitButton-{{p.tournament.id}}">Submit</button>
                                 <input type="hidden" name="tournament" id="id_tournament" value="{{t.id}}">
                             </form>
-                        {% elif t.slug != 'wysc' and not t.registered.payment %}
                         
+                        {% elif t.slug != 'wysc' and not t.registered.payment %}
                             <a href="/profile/payment/" class="border-2 border-orange-500 px-5 py-1 text-center rounded-md m-auto block hover:bg-orange-500 hover:text-white">make payment</a>
                         {% endif %}
+
                     {% else %}
                         {% if t.closed %} 
                             <p>Registration closed</p>
+                        
                         {% else %}
                             <form method="POST" action="/register/">
                                 {% csrf_token %}
