@@ -63,14 +63,14 @@
 
                                             <div class="upholder rounded-lg bg-gray-200 backdrop-blur-lg bg-gray-100/10 w-48 h-48 sm:mx-0 mx-auto">
 
-                                                <div class="uploader bg-cover  rounded-lg bg-gray-150 w-full h-full" onclick="document.getElementById('upload').click()">
+                                                <div class="uploader bg-cover  rounded-lg bg-gray-150 w-full h-full" onclick="document.getElementById('upload-{{p.tournament.id}}').click()">
                                                   <ion-icon name="cloud-upload" class="text-center flex justify-center w-full pt-16 pb-0 text-3xl text-blue-500"></ion-icon>
-                                                  <input id="upload"  type="file" name="payment" accept="image/*, .pdf" id="id_payment-{{p.tournament.id}}" class="form-input mt-1 block w-full hidden">
-                                                  <p id="prev_name" class="text-center pt-0 pb-2 text-blue-500 font-bold text-sm ">Click to Upload</p>
+                                                  <input id="upload-{{p.tournament.id}}"  type="file" name="payment" accept="image/*, .pdf" id="id_payment-{{p.tournament.id}}" class="form-input mt-1 block w-full hidden">
+                                                  <p id="prev_name-{{p.tournament.id}}" class="text-center pt-0 pb-2 text-blue-500 font-bold text-sm ">Click to Upload</p>
 
                                                 </div>
 
-                                                <div alt="" id="preview" class="rounded-lg"></div>
+                                                <div alt="" id="preview-{{p.tournament.id}}" class="rounded-lg"></div>
                                             </div>
 
 
@@ -108,22 +108,62 @@
                     }
                 });
             });
-            var inp = document.getElementById("upload");
-            var preview = document.getElementById("preview");
-            var prev_nm = document.getElementById("prev_name");
-            inp.onchange = (evt) => {
-                const [file] = inp.files;
-                if (file) {
-                preview.parentNode.style.backgroundImage = `url(${URL.createObjectURL(file)})`;
+            var inp1 = document.getElementById("upload-1");
+            var preview1 = document.getElementById("preview-1");
+            var prev_nm1 = document.getElementById("prev_name-1");
+            inp1.onchange = (evt) => {
+                const [file1] = inp1.files;
+                if (file1) {
+                preview1.parentNode.style.backgroundImage = `url(${URL.createObjectURL(file1)})`;
 
-                preview.parentNode.style.backgroundSize = 'cover';
-            prev_nm.parentNode.style.backdropFilter = 'blur(1px)'
+                preview1.parentNode.style.backgroundSize = 'cover';
+            prev_nm1.parentNode.style.backdropFilter = 'blur(1px)'
 
-                  prev_nm.innerHTML = file.name;
+                  prev_nm1.innerHTML = file1.name;
                   
                 }
               };
               
+
+
+
+
+              var inp2 = document.getElementById("upload-2");
+              var preview2 = document.getElementById("preview-2");
+              var prev_nm2 = document.getElementById("prev_name-2");
+              inp2.onchange = (evt) => {
+                  const [file2] = inp2.files;
+                  if (file2) {
+                  preview2.parentNode.style.backgroundImage = `url(${URL.createObjectURL(file2)})`;
+  
+                  preview2.parentNode.style.backgroundSize = 'cover';
+              prev_nm2.parentNode.style.backdropFilter = 'blur(1px)'
+  
+                    prev_nm2.innerHTML = file2.name;
+                    
+                  }
+                };
+
+
+
+
+                
+            var inp3 = document.getElementById("upload-3");
+            var preview3 = document.getElementById("preview-3");
+            var prev_nm3 = document.getElementById("prev_name-3");
+            inp3.onchange = (evt) => {
+                const [file3] = inp3.files;
+                if (file3) {
+                preview3.parentNode.style.backgroundImage = `url(${URL.createObjectURL(file3)})`;
+
+                preview3.parentNode.style.backgroundSize = 'cover';
+            prev_nm3.parentNode.style.backdropFilter = 'blur(1px)'
+
+                  prev_nm3.innerHTML = file3.name;
+                  
+                }
+              };
+
         </script>
     </div>
 {% endblock %}
