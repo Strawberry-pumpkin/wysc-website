@@ -63,7 +63,7 @@ class PaymentAdmin(admin.ModelAdmin):
     list_display = ['tournament', 'name', 'country', 'passport', 'qualified', 'payment', 'approval', 'approved_by']
     search_fields = ['tournament__name', 'name']
     #exclude = ['approved_by']
-    list_filter = ('approval',)
+    list_filter = ('tournament', 'approval',)
     list_editable = ['approval', 'qualified']
 
     def country(self, obj):
