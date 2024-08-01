@@ -48,6 +48,7 @@ class Migration(migrations.Migration):
                 ('white', models.IntegerField(default=0)),
                 ('payment', models.FileField(blank=True, null=True, upload_to='')),
                 ('passport', models.FileField(blank=True, null=True, upload_to='')),
+                #('qualified', models.CharField(choices=[('Q', 'Quota'), ('N', 'Non Quota'), ('0', 'Not Applicable')], default='0', max_length=1)),
                 ('approved_on', models.DateTimeField(auto_now_add=True, null=True)),
                 ('approval', models.CharField(choices=[('V', 'Verified'), ('R', 'Verficiation Failed'), ('P', 'Pending Verification'), ('U', 'Unpaid')], default='U', max_length=1)),
                 ('approved_by', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.PROTECT, related_name='approved_by', to=settings.AUTH_USER_MODEL)),
