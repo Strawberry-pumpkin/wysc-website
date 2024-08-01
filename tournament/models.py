@@ -253,6 +253,9 @@ class Participant(models.Model):
         ('V', 'Verified'), ('R','Verficiation Failed'), 
         ('P', 'Pending Verification'), ('U', 'Not Uploaded')
     ]
+    QUOTA_CHOICES = [
+        ('Q', 'Quota'), ('N', 'Non quota'), ('0', 'Not Applicable')
+    ]
 
     name = models.CharField(max_length=128)
     played = models.IntegerField(default=0, null=True)
@@ -274,7 +277,10 @@ class Participant(models.Model):
     payment = models.FileField(null=True, blank=True)
     passport = models.FileField(null=True, blank=True)
 
+    qualified = models.CharField(max_length=1, choices=QUOTA_CHOICES, default='0')
+
     approved_by = models.ForeignKey(User, on_delete=models.PROTECT, related_name='approved_by',null=True,blank=True)
+
     approved_on = models.DateTimeField(auto_now_add=True, null=True, blank=True)
     approval = models.CharField(max_length=1, choices=APPROVAL_CHOICES, default='U')
 
